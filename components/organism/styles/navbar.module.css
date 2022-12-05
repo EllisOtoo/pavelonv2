@@ -1,0 +1,22 @@
+.expandMenu {
+  height: 20vh;
+}
+
+.fadeIn {
+  opacity: 1;
+  animation-name: makeVisible;
+  animation-duration: 1s;
+}
+
+@keyframes makeVisible {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hide {
+  display: none;
+}
