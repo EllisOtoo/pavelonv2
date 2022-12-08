@@ -8,11 +8,10 @@ type MenuProp = {
 
 function MenuItem({ menu }: MenuProp) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { setShowSubNav, setSubNavContentIndex } = useContext(IndexContext);
+  const { setShowSubNav, setSubNavContentIndex, setSubNavTitle } =
+    useContext(IndexContext);
 
-  useEffect(() => {
-    console.log(menu.id);
-  }, []);
+  useEffect(() => {}, []);
 
   const expandRelativeMenu = () => {
     setShowSubNav(true);
@@ -26,6 +25,7 @@ function MenuItem({ menu }: MenuProp) {
 
   return (
     <li
+      onClick={() => setSubNavTitle(menu.title)}
       className="hover:text-sky-700 cursor-pointer"
       onMouseEnter={expandRelativeMenu}
       onMouseLeave={collapse}

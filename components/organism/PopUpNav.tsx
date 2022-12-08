@@ -1,0 +1,68 @@
+import React, {
+  Children,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+} from "react";
+import anime from "animejs";
+import Link from "next/link";
+import KeyboardArrowRightSharpIcon from "@mui/icons-material/KeyboardArrowRightSharp";
+import AppsSharpIcon from "@mui/icons-material/AppsSharp";
+import { IndexContext } from "../../pages";
+
+function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
+  // add animejs js motion effect on mount
+  // remove on unmount
+  const subNavRef = useRef(null);
+  const subNavContent = useRef(null);
+
+  const { subNavTitle } = useContext(IndexContext);
+
+  useLayoutEffect(() => {
+    anime({
+      targets: subNavContent.current,
+      opacity: ["0%", "100%"],
+      easing: "easeInOutQuad",
+    });
+  });
+
+  useEffect(() => {
+    anime({
+      targets: subNavRef.current,
+      translateY: [3],
+    });
+    return () => {
+      anime.remove(subNavRef.current);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={subNavRef}
+      className={`absolute  z-10 left-[8%] m-auto p-12 w-10/12  bg-gray-900 rounded-lg text-white`}
+    >
+      <div ref={subNavContent}>
+        <p className="text-2xl">{subNavTitle}</p>
+        <hr className={"my-4"} />
+        <ul className="flex flex-col md:flex-row">
+          {menuToDisplay.map((item) => (
+            <li className="text-sky-100 flex gap-12">
+              <AppsSharpIcon sx={{ color: "slateblue" }} />
+              <div className="cursor-pointer w-6/12">
+                <span className="font-bold"> {item}</span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.{" "}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {children && children}
+    </div>
+  );
+}
+
+export default PopUpNav;
