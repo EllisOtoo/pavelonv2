@@ -29,7 +29,7 @@ const TabSwitchTest = () => {
     <div className="relative">
       <div
         ref={menuParent}
-        className="relative flex z-10 w-4/12 justify-between"
+        className="relative flex z-10 w-10/12 justify-between"
       >
         {/** loop childelements and attach mouseover effect dynamically to all its children instead of hardCoding */}
         <div ref={startingMenuItem}>One</div>

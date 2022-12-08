@@ -25,7 +25,7 @@ function MenuItem({ menu }: MenuProp) {
 
   return (
     <li
-      onClick={() => setSubNavTitle(menu.title)}
+      onMouseOver={() => setSubNavTitle(menu.title)}
       className="hover:text-sky-700 cursor-pointer"
       onMouseEnter={expandRelativeMenu}
       onMouseLeave={collapse}
