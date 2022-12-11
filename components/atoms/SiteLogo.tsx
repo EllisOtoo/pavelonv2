@@ -4,7 +4,8 @@ import { IndexContext } from "../../pages";
 import Link from "next/link";
 
 function SiteLogo({ dimensions = null }) {
-  const { matches } = useContext(IndexContext);
+  // const { matches } = useContext(IndexContext);
+  const matches = true;
   return (
     <div
       className={`${dimensions ? dimensions.height : "h-8"} ${

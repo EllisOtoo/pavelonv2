@@ -9,7 +9,7 @@ import anime from "animejs";
 import Link from "next/link";
 import KeyboardArrowRightSharpIcon from "@mui/icons-material/KeyboardArrowRightSharp";
 import AppsSharpIcon from "@mui/icons-material/AppsSharp";
-import { IndexContext } from "../../pages";
+import { IndexContext } from "../../pages/_app";
 
 function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
   // add animejs js motion effect on mount

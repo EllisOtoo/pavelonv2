@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { IndexContext } from "../../pages";
+import { IndexContext } from "../../pages/_app";
 
 type MenuProp = {
   menu: { id: number; title: string; subItems: string[] };

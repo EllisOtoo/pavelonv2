@@ -14,9 +14,9 @@ import { StyledNav } from "../styled/styled";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MenuSharpIcon from "@mui/icons-material/MenuSharp";
 import AnimateHeight from "react-animate-height";
-import { IndexContext } from "../../pages";
+import { IndexContext } from "../../pages/_app";
 
-function NavBar({ setShowSubNav, showSubNav }) {
+function NavBar() {
   const [showDropDown, setShowDropDown] = useState(false);
   const [expandedNavHeight, setExpandedNavHeight] = useState(0);
 
@@ -24,8 +24,9 @@ function NavBar({ setShowSubNav, showSubNav }) {
   const testRef = useRef(null);
   const menuList = useRef(null);
 
-  //   const matches = useMediaQuery("(max-width:600px)");
-  const { matches } = useContext(IndexContext);
+  const { setShowSubNav, showSubNav } = useContext(IndexContext);
+
+  const matches = useMediaQuery("(max-width:600px)");
 
   const MenuListComponent = (
     <MenuList

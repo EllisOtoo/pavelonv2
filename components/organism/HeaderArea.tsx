@@ -1,20 +1,23 @@
 import Image from "next/image";
 import React, { useContext, useEffect, useRef } from "react";
-import styled from "styled-components";
-import { GradientDiv } from "../styled/styled";
+
 import styles from "./HeaderArea.module.css";
-// import Button from "@mui/material/Button";
-import { IndexContext } from "../../pages";
+
 import Buttons from "../atoms/Button";
 
 import anime from "animejs";
 import { useInView } from "framer-motion";
 import useInview from "../../hooks/useInView";
+import { useMediaQuery } from "@mui/material";
+import { IndexContext } from "../../pages/_app";
 
-function HeaderArea({ setShowSubNav }) {
-  const { matches } = useContext(IndexContext);
+function HeaderArea() {
+  const matches = useMediaQuery("(max-width:600px)");
+
   const cardRef = useRef(null); // console.log(useInview(cardRef));
   const [inView] = useInview(cardRef); // Hooks to check if ref is inView
+
+  const { setShowSubNav } = useContext(IndexContext);
 
   useEffect(() => {
     inView

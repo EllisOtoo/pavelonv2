@@ -1,3 +1,4 @@
+import { Link } from "@mui/material";
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import Button from "../atoms/Button";
@@ -33,7 +34,11 @@ function FullyIntegrated() {
             our Commerce API. We also help companies onboard their users,
             process loans, collect loans, access financial data, and much more.
           </div>
-          <Button title={"See More"} />
+
+          <Link href="/kyc">
+            <Button title={"See More"} />
+          </Link>
+
           <div className="flex items-center">
             <div className="relative flex flex-col items-end">
               <Image
