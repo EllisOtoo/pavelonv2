@@ -17,7 +17,8 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
   const subNavRef = useRef(null);
   const subNavContent = useRef(null);
 
-  const { subNavTitle, showSubNav } = useContext(IndexContext);
+  const { subNavTitle, showSubNav, setShowSubNav, setShowDropDown } =
+    useContext(IndexContext);
 
   useLayoutEffect(() => {
     anime({
@@ -52,7 +53,16 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
                 <AppsSharpIcon sx={{ color: "slateblue" }} />
                 <div className="cursor-pointer w-6/12">
                   <Link href={item.url}>
-                    <span className="font-bold"> {item.title}</span>
+                    <span
+                      className="font-bold"
+                      onClick={() => {
+                        setShowDropDown(false);
+                        setShowSubNav(false);
+                      }}
+                    >
+                      {" "}
+                      {item.title}
+                    </span>
                   </Link>
                   <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.

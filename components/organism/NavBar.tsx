@@ -17,14 +17,15 @@ import AnimateHeight from "react-animate-height";
 import { IndexContext } from "../../pages/_app";
 
 function NavBar() {
-  const [showDropDown, setShowDropDown] = useState(false);
+  // const [showDropDown, setShowDropDown] = useState(false);
   const [expandedNavHeight, setExpandedNavHeight] = useState(0);
 
   const navBarRef = useRef(null);
   const testRef = useRef(null);
   const menuList = useRef(null);
 
-  const { setShowSubNav, showSubNav } = useContext(IndexContext);
+  const { setShowSubNav, showSubNav, showDropDown, setShowDropDown } =
+    useContext(IndexContext);
 
   const matches = useMediaQuery("(max-width:600px)");
 

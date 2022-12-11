@@ -65,6 +65,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const [subNavContentIndex, setSubNavContentIndex] = useState(0);
   const [subNavTitle, setSubNavTitle] = useState("");
   const matches = useMediaQuery("(max-width:600px)");
+  const [showDropDown, setShowDropDown] = useState(false);
 
   return (
     <>
@@ -72,6 +73,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <IndexContext.Provider
           value={{
             setShowSubNav,
+            showDropDown,
+            setShowDropDown,
             setSubNavContentIndex,
             matches,
             subNavTitle,

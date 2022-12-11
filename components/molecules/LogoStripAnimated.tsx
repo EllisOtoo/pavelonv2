@@ -19,12 +19,15 @@ const styles = {
     color: "#fff",
   },
   slide1: {
-    backgroundColor: "silver",
+    background: "#FEA900",
   },
   slide2: {
-    backgroundColor: "#B3DC4A",
+    background: "#B3DC4A",
   },
   slide3: {
+    background: "#6AC0FF",
+  },
+  slide4: {
     backgroundColor: "silver",
   },
 };
@@ -51,7 +54,7 @@ function LogoStripAnimated({ imageUrls, headertitle }) {
           <div style={Object.assign({}, styles.slide, styles.slide3)}>
             Yango
           </div>
-          <div style={Object.assign({}, styles.slide, styles.slide3)}>GBC</div>
+          <div style={Object.assign({}, styles.slide, styles.slide4)}>GBC</div>
         </AutoPlaySwipeableViews>
       </div>
     </div>

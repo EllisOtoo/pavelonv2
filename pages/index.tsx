@@ -5,8 +5,11 @@ import FullyIntegrated from "../components/organism/FullyIntegrated";
 import BuiltInMinutes from "../components/organism/BuiltInMinutes";
 import PavelonAPIs from "../components/organism/ImageBoxAndList";
 import GetStarted from "../components/organism/GetStarted";
+import { useMediaQuery } from "@mui/material";
 
 export default function Home({ setShowSubNav }) {
+  const matches = useMediaQuery("(max-width:600px)"); //Check viewport isk mobilefirst
+
   return (
     <div>
       <Head>
@@ -17,7 +20,17 @@ export default function Home({ setShowSubNav }) {
       {/* <TabSwitchTest /> */}
 
       {/* <HeaderArea setShowSubNav={setShowSubNav} /> */}
-      <HeaderArea title="Lending Infrastructure for Africa." />
+      <HeaderArea title="Lending Infrastructure for Africa.">
+        {" "}
+        <p className="text-xl" style={{ width: `${matches ? "80vw" : ""}` }}>
+          Technology and infrastructure to launch and scale your fintech in
+          Africa.
+        </p>
+        <p className="text-xl" style={{ width: `${matches ? "85vw" : ""}` }}>
+          Use Pavelon’s APIs to embed a full range of credit services on your
+          platform to increase revenue streams.
+        </p>
+      </HeaderArea>
       <LogoStripAnimated
         headertitle={"Powering Business, small and LARGE"}
         imageUrls={[
