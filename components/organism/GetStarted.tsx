@@ -11,6 +11,7 @@ function GetStarted() {
       anime({
         targets: topCard.current,
         translateY: -40,
+        opacity: 1,
         easing: "easeInOutQuad",
       });
     } else {
@@ -43,7 +44,7 @@ function GetStarted() {
           </Button>
         </div>
         <div className="w-full md:w-6/12 relative flex flex-col items-end">
-          <div ref={topCard} className="relative h-20 my-12 w-6/12">
+          <div ref={topCard} className="relative h-20 my-12 w-6/12 opacity-0">
             <Image
               fill
               alt="Get Started with Pavelon"
