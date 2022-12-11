@@ -1,9 +1,20 @@
 import React from "react";
 
-function SectionHeader({ title, children }) {
+function SectionHeader({ title, children, textSize }) {
   return (
     <>
-      {children ? children : <h3 className="text-4xl font-light">{title}</h3>}
+      {children ? (
+        children
+      ) : (
+        <h3
+          style={{ fontSize: `${textSize ? textSize : ""}` }}
+          className={`${
+            textSize ? "leading-tight" : "text-4xl font-light leading-3"
+          }`}
+        >
+          {title}
+        </h3>
+      )}
     </>
   );
 }

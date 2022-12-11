@@ -2,6 +2,9 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import anime from "animejs";
 
 const TabSwitchTest = () => {
+<<<<<<< HEAD
+  return <div className="relative"></div>;
+=======
   const [startingMenuItemHeight, setStartHeight] = useState(0);
 
   const startingMenuItem = useRef(null);
@@ -57,6 +60,7 @@ const TabSwitchTest = () => {
       ></div>
     </div>
   );
+>>>>>>> headerActions
 };
 
 export default TabSwitchTest;

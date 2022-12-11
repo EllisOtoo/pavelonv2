@@ -9,7 +9,7 @@ import anime from "animejs";
 import Link from "next/link";
 import KeyboardArrowRightSharpIcon from "@mui/icons-material/KeyboardArrowRightSharp";
 import AppsSharpIcon from "@mui/icons-material/AppsSharp";
-import { IndexContext } from "../../pages";
+import { IndexContext } from "../../pages/_app";
 
 function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
   // add animejs js motion effect on mount
@@ -17,7 +17,8 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
   const subNavRef = useRef(null);
   const subNavContent = useRef(null);
 
-  const { subNavTitle } = useContext(IndexContext);
+  const { subNavTitle, showSubNav, setShowSubNav, setShowDropDown } =
+    useContext(IndexContext);
 
   useLayoutEffect(() => {
     anime({
@@ -30,39 +31,52 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
   useEffect(() => {
     anime({
       targets: subNavRef.current,
-      translateY: [3],
+      translateY: 5,
     });
     return () => {
       anime.remove(subNavRef.current);
     };
-  }, []);
+  });
 
-  return (
-    <div
-      ref={subNavRef}
-      className={`absolute  z-10 left-[8%] m-auto p-12 w-10/12  bg-gray-900 rounded-lg text-white`}
-    >
-      <div ref={subNavContent}>
-        <p className="text-2xl">{subNavTitle}</p>
-        <hr className={"my-4"} />
-        <ul className="flex flex-col md:flex-row">
-          {menuToDisplay.map((item) => (
-            <li className="text-sky-100 flex gap-12">
-              <AppsSharpIcon sx={{ color: "slateblue" }} />
-              <div className="cursor-pointer w-6/12">
-                <span className="font-bold"> {item}</span>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.{" "}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ul>
+  if (showSubNav)
+    return (
+      <div
+        ref={subNavRef}
+        className={`absolute  z-10 left-[8%] m-auto p-12 w-10/12  bg-gray-900 rounded-lg text-white`}
+      >
+        <div ref={subNavContent}>
+          <p className="text-2xl">{subNavTitle}</p>
+          <hr className={"my-4"} />
+          <ul className="flex flex-col md:flex-row">
+            {menuToDisplay.map((item) => (
+              <li className="text-sky-100 flex gap-12">
+                <AppsSharpIcon sx={{ color: "slateblue" }} />
+                <div className="cursor-pointer w-6/12">
+                  <Link href={item.url}>
+                    <span
+                      className="font-bold"
+                      onClick={() => {
+                        setShowDropDown(false);
+                        setShowSubNav(false);
+                      }}
+                    >
+                      {" "}
+                      {item.title}
+                    </span>
+                  </Link>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {children && children}
       </div>
-
-      {children && children}
-    </div>
-  );
+    );
+  return null;
 }
 
 export default PopUpNav;

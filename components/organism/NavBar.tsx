@@ -14,25 +14,27 @@ import { StyledNav } from "../styled/styled";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MenuSharpIcon from "@mui/icons-material/MenuSharp";
 import AnimateHeight from "react-animate-height";
-import { IndexContext } from "../../pages";
+import { IndexContext } from "../../pages/_app";
 
-function NavBar({ setShowSubNav, showSubNav }) {
-  const [showDropDown, setShowDropDown] = useState(false);
+function NavBar() {
+  // const [showDropDown, setShowDropDown] = useState(false);
   const [expandedNavHeight, setExpandedNavHeight] = useState(0);
 
   const navBarRef = useRef(null);
   const testRef = useRef(null);
   const menuList = useRef(null);
 
-  //   const matches = useMediaQuery("(max-width:600px)");
-  const { matches } = useContext(IndexContext);
+  const { setShowSubNav, showSubNav, showDropDown, setShowDropDown } =
+    useContext(IndexContext);
+
+  const matches = useMediaQuery("(max-width:600px)");
 
   const MenuListComponent = (
     <MenuList
       ref={menuList}
       underline={matches ? true : false}
       list={[
-        { id: 0, title: "Use Cases", subItems: ["One", "Two"] },
+        { id: 0, title: "Products", subItems: ["KYC", "Two"] },
         { id: 1, title: "Solutions", subItems: ["Two", "Three"] },
         { id: 2, title: "Case Studies", subItems: ["Credify", "GCB"] },
         { id: 3, title: "Products", subItems: ["Credify", "GCB"] },
@@ -44,7 +46,7 @@ function NavBar({ setShowSubNav, showSubNav }) {
     setExpandedNavHeight(navBarRef.current.getClientRects()[0].height);
   };
 
-  //   console.log(matches);
+  console.log("from Context", showSubNav);
   useEffect(() => {
     if (showDropDown) {
       setExpandedNavHeight(
@@ -83,7 +85,7 @@ function NavBar({ setShowSubNav, showSubNav }) {
                   setShowDropDown(!showDropDown);
                   setMenuHeight();
                 }
-                if (showSubNav) setShowSubNav(!showSubNav);
+                if (showSubNav) setShowSubNav(false);
               }}
               className="text-white"
             >

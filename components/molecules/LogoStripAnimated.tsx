@@ -1,67 +1,62 @@
 import Image from "next/image";
 import React from "react";
 import SectionHeader from "../atoms/SectionHeader";
+import SwipeableViews from "react-swipeable-views";
+import { autoPlay } from "react-swipeable-views-utils";
+import { Paper } from "@mui/material";
 
-// import Slider from "infinite-react-carousel";
-import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
-
-const handleDragStart = (e) => e.preventDefault();
-
-const items = [
-  <Image
-    alt=""
-    src="/logostrip/credify.png"
-    onDragStart={handleDragStart}
-    role="presentation"
-    fill
-  />,
-  <Image
-    alt=""
-    src="/logostrip/credify.png"
-    onDragStart={handleDragStart}
-    role="presentation"
-    fill
-  />,
-  <Image
-    alt=""
-    src="/logostrip/credify.png"
-    onDragStart={handleDragStart}
-    role="presentation"
-    fill
-  />,
-];
-
-const Gallery = () => {
-  return <AliceCarousel mouseTracking items={items} />;
+const styles = {
+  root: {
+    // padding: "0 30px", /* Show some extra logo on side */
+    padding: "0 0px",
+  },
+  slideContainer: {
+    padding: "0 1px",
+  },
+  slide: {
+    padding: 15,
+    minHeight: 100,
+    color: "#fff",
+  },
+  slide1: {
+    background: "#FEA900",
+  },
+  slide2: {
+    background: "#B3DC4A",
+  },
+  slide3: {
+    background: "#6AC0FF",
+  },
+  slide4: {
+    backgroundColor: "silver",
+  },
 };
+
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 function LogoStripAnimated({ imageUrls, headertitle }) {
   return (
-    <div className=" w-10/12 mt-48 mb-24 items-center flex justify-between flex-col md:flex-row md:divide-x m-auto">
-      <SectionHeader>
-        <p className="text-4xl font-light">
-          Powering businesses, <br /> small and large{" "}
-        </p>
-      </SectionHeader>
-      <div>
-        <div
-          className="grid grid-cols-3 my-12 gap-y-12 gap-x-2 w-full"
-          onTouchMove={(touchMoveEvent) => console.log(touchMoveEvent)}
-          onTouchStart={(touchStartEvent) => console.log("Touhc started")}
+    <div className=" my-12  flex flex-col md:flex-row items-center justify-around w-full">
+      <p className="text-4xl w-12/12 px-12">
+        Powering businesses, small and large
+      </p>
+      <div className="w-12/12 my-4">
+        <AutoPlaySwipeableViews
+          style={styles.root}
+          slideStyle={styles.slideContainer}
         >
-          {imageUrls.map((imageLink) => (
-            <Image
-              src={imageLink}
-              width={100}
-              className=""
-              height={50}
-              alt=""
-            />
-          ))}
-        </div>
+          <div style={Object.assign({}, styles.slide, styles.slide1)}>
+            Creditmall
+          </div>
+          <div style={Object.assign({}, styles.slide, styles.slide2)}>
+            Credify
+          </div>
+          <div style={Object.assign({}, styles.slide, styles.slide3)}>
+            Yango
+          </div>
+          <div style={Object.assign({}, styles.slide, styles.slide4)}>GBC</div>
+        </AutoPlaySwipeableViews>
       </div>
-      {/* <Gallery /> */}
     </div>
   );
 }

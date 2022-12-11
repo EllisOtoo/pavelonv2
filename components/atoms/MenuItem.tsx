@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { IndexContext } from "../../pages";
+import { IndexContext } from "../../pages/_app";
 
 type MenuProp = {
   menu: { id: number; title: string; subItems: string[] };
@@ -8,7 +8,7 @@ type MenuProp = {
 
 function MenuItem({ menu }: MenuProp) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { setShowSubNav, setSubNavContentIndex, setSubNavTitle } =
+  const { setShowSubNav, setSubNavContentIndex, setSubNavTitle, showSubNav } =
     useContext(IndexContext);
 
   useEffect(() => {}, []);
@@ -16,7 +16,7 @@ function MenuItem({ menu }: MenuProp) {
   const expandRelativeMenu = () => {
     setShowSubNav(true);
     setSubNavContentIndex(menu.id);
-    // setSubNavContentIndex(menu.id);
+    setSubNavTitle(menu.title);
   };
 
   const collapse = (e) => {
@@ -25,9 +25,10 @@ function MenuItem({ menu }: MenuProp) {
 
   return (
     <li
-      onMouseOver={() => setSubNavTitle(menu.title)}
+      // onClick={() => setSubNavTitle(menu.title)}
       className="hover:text-sky-700 cursor-pointer"
-      onMouseEnter={expandRelativeMenu}
+      // onMouseEnter={expandRelativeMenu}
+      onClick={expandRelativeMenu}
       onMouseLeave={collapse}
     >
       {menu.title}
