@@ -8,9 +8,7 @@ function SectionHeader({ title, children, textSize }) {
       ) : (
         <h3
           style={{ fontSize: `${textSize ? textSize : ""}` }}
-          className={`${
-            textSize ? "leading-tight" : "text-4xl font-light leading-3"
-          }`}
+          className={`${textSize ? "leading-tight" : "text-4xl font-light"}`}
         >
           {title}
         </h3>
