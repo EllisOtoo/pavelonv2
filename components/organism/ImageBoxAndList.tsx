@@ -15,8 +15,8 @@ function ImageBoxandList({ image, listItems, flexCol }) {
 
       <div className={`${flexCol && "w-full"} md:w-6/12 `}>
         <ul className="grid grid-cols-1  divide-y divide-gray-200">
-          {listItems.map(({ title, description }) => (
-            <li className="py-4">
+          {listItems.map(({ title, description }, idx) => (
+            <li key={`${title}-${idx}`} className="py-4">
               <h3 className="font-bold text-lg">{title}</h3>
               <p>{description}</p>
             </li>
