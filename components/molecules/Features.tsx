@@ -7,7 +7,7 @@ function Features({ features }: { features: object[] }) {
     <div className="grid grid-cols-2 gap-x-2 gap-y-12">
       {features.map((feature, idx) => {
         return (
-          <div className={``}>
+          <div key={`${idx}+${feature}`} className={``}>
             <h4 className="text-xl font-bold">{feature.name}</h4>
             <p>{feature.description}</p>
           </div>

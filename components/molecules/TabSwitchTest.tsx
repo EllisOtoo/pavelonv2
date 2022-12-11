@@ -10,7 +10,7 @@ const TabSwitchTest = () => {
 
   useLayoutEffect(() => {
     setStartHeight(startingMenuItem.current.getBoundingClientRect().height);
-  });
+  }, []);
 
   useEffect(() => {
     const children = Array.from(menuParent.current.children);

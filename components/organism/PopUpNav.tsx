@@ -49,7 +49,7 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
           <hr className={"my-4"} />
           <ul className="flex flex-col md:flex-row">
             {menuToDisplay.map((item) => (
-              <li className="text-sky-100 flex gap-12">
+              <li key={item} className="text-sky-100 flex gap-12">
                 <AppsSharpIcon sx={{ color: "slateblue" }} />
                 <div className="cursor-pointer w-6/12">
                   <Link href={item.url}>

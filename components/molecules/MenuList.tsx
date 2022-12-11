@@ -23,4 +23,6 @@ const MenuList = React.forwardRef(({ list, underline }: MenuList, ref) => {
   );
 });
 
+MenuList.displayName = "Hello World";
+
 export default MenuList;
