@@ -33,7 +33,7 @@ function NavBar() {
       ref={menuList}
       underline={matches ? true : false}
       list={[
-        { id: 0, title: "Use Cases", subItems: ["One", "Two"] },
+        { id: 0, title: "Products", subItems: ["KYC", "Two"] },
         { id: 1, title: "Solutions", subItems: ["Two", "Three"] },
         { id: 2, title: "Case Studies", subItems: ["Credify", "GCB"] },
         { id: 3, title: "Products", subItems: ["Credify", "GCB"] },
@@ -45,7 +45,7 @@ function NavBar() {
     setExpandedNavHeight(navBarRef.current.getClientRects()[0].height);
   };
 
-  //   console.log(matches);
+  console.log("from Context", showSubNav);
   useEffect(() => {
     if (showDropDown) {
       setExpandedNavHeight(
@@ -84,7 +84,7 @@ function NavBar() {
                   setShowDropDown(!showDropDown);
                   setMenuHeight();
                 }
-                if (showSubNav) setShowSubNav(!showSubNav);
+                if (showSubNav) setShowSubNav(false);
               }}
               className="text-white"
             >

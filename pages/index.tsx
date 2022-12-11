@@ -17,7 +17,7 @@ export default function Home({ setShowSubNav }) {
       {/* <TabSwitchTest /> */}
 
       {/* <HeaderArea setShowSubNav={setShowSubNav} /> */}
-      <HeaderArea />
+      <HeaderArea title="Lending Infrastructure for Africa." />
       <LogoStripAnimated
         headertitle={"Powering Business, small and LARGE"}
         imageUrls={[

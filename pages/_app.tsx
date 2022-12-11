@@ -39,14 +39,24 @@ const poppins = Poppins({
 export const IndexContext = createContext<null | object>(null);
 
 const subNavItems = [
-  ["KYC", "Identity API"],
-  ["BAAS", "Investment As A Service", "Insurance As A Service"],
-  ["Credify", "Credify Mall"],
   [
-    "Digital Lending API",
-    "Capital By API",
-    "KYC/Onboarding API",
-    "Digital Accounts API",
+    { title: "Kyc", url: "/kyc" },
+    { title: "Identity API", url: "/digitalLendingApi" },
+  ],
+  [
+    { title: "BAAS", url: "/digitalLendingApi" },
+    { title: "Investment As A Service", url: "/digitalLendingApi" },
+    { title: "Insurance As A Service", url: "/digitalLendingApi" },
+  ],
+  [
+    { title: "Creditmall", url: "/digitalLendingApi" },
+    { title: "Credify", url: "/digitalLendingApi" },
+  ],
+  [
+    { title: "Digital Lending API", url: "/digitalLendingApi" },
+    { title: "Digital Lending API", url: "/digitalLendingApi" },
+    { title: "Digital Lending API", url: "/digitalLendingApi" },
+    { title: "Digital Lending API", url: "/digitalLendingApi" },
   ],
 ];
 
@@ -65,6 +75,7 @@ export default function App({ Component, pageProps }: AppProps) {
             setSubNavContentIndex,
             matches,
             subNavTitle,
+            showSubNav,
             setSubNavTitle,
           }}
         >

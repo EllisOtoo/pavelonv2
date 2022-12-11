@@ -50,10 +50,10 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
             <li className="text-sky-100 flex gap-12">
               <AppsSharpIcon sx={{ color: "slateblue" }} />
               <div className="cursor-pointer w-6/12">
-                <span className="font-bold"> {item}</span>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.{" "}
-                </p>
+                <Link href={item.url}>
+                  <span className="font-bold"> {item.title}</span>
+                </Link>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
               </div>
             </li>
           ))}

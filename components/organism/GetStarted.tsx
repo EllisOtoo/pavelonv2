@@ -3,10 +3,10 @@ import React, { useEffect } from "react";
 
 function GetStarted() {
   return (
-    <div className="w-full bg-gray-200 py-24">
-      <div className="w-10/12 m-auto">
+    <div className="w-full md:flex bg-gray-200 py-24">
+      <div className="w-10/12 md:flex m-auto">
         <hr />
-        <div>
+        <div className="md:w-6/12">
           <p>BUILDING CREDIT PRODUCTS HAS NEVER BEEN EASIER</p>
           <p className="text-3xl font-bold">Ready to get Started?</p>
           <p>
@@ -15,10 +15,9 @@ function GetStarted() {
             accelerate growth.
           </p>
         </div>
-        <div>
+        <div className="md:w-3/12 relative h-96">
           <Image
-            width={300}
-            height={300}
+            fill
             alt="Get Started with Pavelon"
             src={"/getStarted/api_Image.png"}
           />

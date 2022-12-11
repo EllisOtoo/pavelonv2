@@ -4,21 +4,32 @@ import anime from "animejs";
 import Typed from "react-typed";
 import ImageBoxandList from "./ImageBoxAndList";
 import { Button } from "@mui/material";
+import { useInView } from "framer-motion";
 
 function BuiltInMinutes() {
   const [startIndex, setIndex] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
-  // const ref = useRef();
-  let typeRef;
+  const builtInMinutes = useRef(null);
+  const [typeRef, setTypeRef] = useState(null);
 
-  // let typedRef = useRef(null);
-  useEffect(() => {});
+  const Inview = useInView(builtInMinutes);
+
+  // let typeRef = useRef(null);
+  useEffect(() => {
+    if (Inview) {
+      typeRef.start();
+    }
+    if (!Inview && typeRef) {
+      typeRef.stop();
+    }
+    // typeRef.stop();
+  }, [typeRef, Inview]);
 
   const stopTyping = () => {
-    typeRef.stop(); // Stop typing
+    // console.log(typeRef);
   };
   const resumeTyping = () => {
-    typeRef.start(); // Stop typing
+    // typeRef.start(); // Stop typing
   };
 
   const handleComplete = () => {
@@ -29,9 +40,12 @@ function BuiltInMinutes() {
   };
 
   return (
-    <div className="flex flex-col bg-gray-900 text-white w-full py-24">
-      <div className="flex flex-col w-10/12 m-auto gap-y-12">
-        <div>
+    <div
+      ref={builtInMinutes}
+      className="flex flex-col bg-gray-900 text-white w-full py-24"
+    >
+      <div className="flex flex-col md:flex-row w-10/12 md:justify-between m-auto gap-y-12 md:flex-wrap">
+        <div className="md:w-4/12">
           <p>BUILT DEVELOPERS</p>
           <p className="text-3xl font-bold">Build-in minutes Launch in weeks</p>
           <p>
@@ -41,7 +55,7 @@ function BuiltInMinutes() {
           </p>
         </div>
         <hr />
-        <div className="w-full flex flex-col justify-between bg-gray-800 p-4 rounded-lg h-72">
+        <div className="w-full md:w-6/12 flex flex-col justify-between bg-gray-800 p-4 rounded-lg h-72">
           <div className="flex-none">
             <p>Installation</p>
             <hr className="my-2" />{" "}
@@ -50,7 +64,7 @@ function BuiltInMinutes() {
             {" "}
             <Typed
               style={{ color: "yellow" }}
-              typedRef={(node) => (typeRef = node)}
+              typedRef={(node) => setTypeRef(node)}
               cursorChar={"|"}
               strings={[
                 `API Request and Response code goes here, API Request and Response code goes here`,
@@ -69,6 +83,7 @@ function BuiltInMinutes() {
               </Button>
             </div>
           </div>
+          {/* <button onClick={() => stopTyping()}>Stop</button> */}
         </div>
 
         <Features
