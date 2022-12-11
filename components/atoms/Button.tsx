@@ -1,4 +1,4 @@
-const Button = ({ title }) => {
+const Button = ({ title }: { title: string }) => {
   return (
     <button
       onClick={() => {
