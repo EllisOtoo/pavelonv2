@@ -10,7 +10,7 @@ function GetStarted() {
     if (inView) {
       anime({
         targets: topCard.current,
-        translateY: -0,
+        translateY: -40,
         easing: "easeInOutQuad",
       });
     } else {
@@ -23,7 +23,7 @@ function GetStarted() {
 
   return (
     <div className="w-full md:flex bg-gray-200 py-24">
-      <div className="w-10/12 md:flex m-auto">
+      <div className="w-10/12 flex-col md:flex m-auto">
         <hr />
         <div className="md:w-6/12">
           <p>BUILDING CREDIT PRODUCTS HAS NEVER BEEN EASIER</p>
@@ -42,15 +42,15 @@ function GetStarted() {
             Get Started
           </Button>
         </div>
-        <div className="md:w-6/12 relative flex flex-col items-center ">
-          <div ref={topCard} className="relative h-20 my-12 w-4/12">
+        <div className="w-full md:w-6/12 relative flex flex-col items-end">
+          <div ref={topCard} className="relative h-20 my-12 w-6/12">
             <Image
               fill
               alt="Get Started with Pavelon"
               src={"/getStarted/top.png"}
             />
           </div>
-          <div className="relative h-40 w-4/12">
+          <div className="relative h-40 w-6/12">
             <Image
               fill
               alt="Get Started with Pavelon"
