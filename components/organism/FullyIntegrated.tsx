@@ -21,47 +21,53 @@ function FullyIntegrated() {
             "A fully integrated suite of Lending, eCommerce, and Payment products"
           }
         />
-        <div className="flex text-base flex-col md:flex-row gap-8 md:gap-24 my-6">
-          <div className="">
+        <div className="flex text-base flex-col md:flex-row md:flex-wrap gap-8  my-6">
+          <div className="md:w-4/12">
             We bring together everything that’s required to build lending into
             any product - from End User Application using our Digital Lending
             APIs to Disbursement or Payout. We also offer Card Issuing API for
             both virtual and physical cards.
             {/* <Buttons buttonTitle={"See more"} btnBGColor={"primary"} /> */}
           </div>
-          <div className="">
+          <div className="md:w-6/12">
             Pavelon’s products also power “Buy Now, Pay Later” Services using
             our Commerce API. We also help companies onboard their users,
             process loans, collect loans, access financial data, and much more.
           </div>
 
-          <Link href="/kyc">
-            <Button title={"See More"} />
-          </Link>
-
-          <div className="flex items-center">
-            <div className="relative flex flex-col items-end">
-              <Image
-                src="/fullyIntegrated/middleImage_2_top.7013319b.png"
-                alt="creditcard"
-                width={200}
-                height={100}
-              />
-
-              <Image
-                src="/fullyIntegrated/middleImage_2_below.5d6e4f23 (1).png"
-                alt="creditcard"
-                width={100}
-                height={100}
-              />
+          <div className="flex flex-col md:flex-row md:w-11/12 justify-around">
+            <div className="w-full">
+              <Link href="/kyc" className="w-full">
+                <Button title={"See More"} />
+              </Link>
             </div>
-            <div>
-              <Image
-                src="/fullyIntegrated/middleImage_2_right.1ebd745b.png"
-                alt="creditcard"
-                width={200}
-                height={100}
-              />
+
+            <div className="w-full">
+              <div className="flex items-center">
+                <div className="relative flex flex-col items-end">
+                  <Image
+                    src="/fullyIntegrated/middleImage_2_top.7013319b.png"
+                    alt="creditcard"
+                    width={300}
+                    height={100}
+                  />
+
+                  <Image
+                    src="/fullyIntegrated/middleImage_2_below.5d6e4f23 (1).png"
+                    alt="creditcard"
+                    width={150}
+                    height={100}
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/fullyIntegrated/middleImage_2_right.1ebd745b.png"
+                    alt="creditcard"
+                    width={250}
+                    height={100}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

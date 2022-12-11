@@ -46,10 +46,9 @@ function HeaderArea({ title = "Hello Section", image = "ajsj" }) {
           setShowSubNav(false);
         }
       }}
-      className="relative flex flex-col py-10 gap-1 items-center md:flex-row bg-sky-100 w-12/12 md:justify-around"
+      className="relative flex flex-col py-16 md:py-24 gap-1 items-center md:flex-row bg-sky-100 w-12/12 md:justify-around"
     >
       <div className="w-10/12 m-auto h-2 left-[8%] absolute top-0"></div>
-
       <div className="flex flex-col w-10/12 md:w-4/12 gap-4 overflow-visible">
         <p
           style={{ width: `${matches ? "90vw" : ""}` }}
@@ -70,7 +69,7 @@ function HeaderArea({ title = "Hello Section", image = "ajsj" }) {
           <Buttons title="Start now" />
         </div>
       </div>
-      <div className="flex w-10/12 items-end md:w-4/12">
+      <div className="flex py-12 w-10/12 items-end md:w-4/12">
         <div className="w-5/12 md:w-4/12 h-72 md:h-96 relative">
           <Image className=" " src={"/landingPageMobile.png"} alt="" fill />
         </div>

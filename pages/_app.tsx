@@ -80,9 +80,10 @@ export default function App({ Component, pageProps }: AppProps) {
           }}
         >
           <NavBar />
-          {showSubNav && (
+          {/* {showSubNav && (
             <PopUpNav menuToDisplay={subNavItems[subNavContentIndex]} />
-          )}
+          )} */}
+          <PopUpNav menuToDisplay={subNavItems[subNavContentIndex]} />
           <style jsx global>{`
             html {
               font-family: ${poppins.style.fontFamily};

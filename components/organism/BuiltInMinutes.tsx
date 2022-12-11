@@ -14,14 +14,21 @@ function BuiltInMinutes() {
 
   const Inview = useInView(builtInMinutes);
 
+  console.log("Inview only", Inview);
+  console.log("Inview", !Inview, Boolean(typeRef));
+
   // let typeRef = useRef(null);
   useEffect(() => {
     if (Inview) {
-      typeRef.start();
+      console.log("run!");
+      typeRef.toggle();
+    } else if (!Inview && Boolean(typeRef)) {
+      console.log("stopped!");
+      typeRef.toggle();
     }
-    if (!Inview && typeRef) {
-      typeRef.stop();
-    }
+    // if (!Inview && typeRef) {
+    //   typeRef.stop();
+    // }
     // typeRef.stop();
   }, [typeRef, Inview]);
 
@@ -40,10 +47,7 @@ function BuiltInMinutes() {
   };
 
   return (
-    <div
-      ref={builtInMinutes}
-      className="flex flex-col bg-gray-900 text-white w-full py-24"
-    >
+    <div className="flex flex-col bg-gray-900 text-white w-full py-24">
       <div className="flex flex-col md:flex-row w-10/12 md:justify-between m-auto gap-y-12 md:flex-wrap">
         <div className="md:w-4/12">
           <p>BUILT DEVELOPERS</p>
@@ -60,14 +64,14 @@ function BuiltInMinutes() {
             <p>Installation</p>
             <hr className="my-2" />{" "}
           </div>
-          <div className="grow">
+          <div ref={builtInMinutes} className="grow">
             {" "}
             <Typed
               style={{ color: "yellow" }}
               typedRef={(node) => setTypeRef(node)}
               cursorChar={"|"}
               strings={[
-                `API Request and Response code goes here, API Request and Response code goes here`,
+                `API Request and Response code goes here, API Request and Response code goes here API Request and Response code goes here, API Request and Response code goes here`,
               ]}
               typeSpeed={40}
               showCursor={showCursor}

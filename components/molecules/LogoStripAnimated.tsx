@@ -7,10 +7,11 @@ import { Paper } from "@mui/material";
 
 const styles = {
   root: {
-    padding: "0 30px",
+    // padding: "0 30px", /* Show some extra logo on side */
+    padding: "0 0px",
   },
   slideContainer: {
-    padding: "0 10px",
+    padding: "0 1px",
   },
   slide: {
     padding: 15,
@@ -32,22 +33,26 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 function LogoStripAnimated({ imageUrls, headertitle }) {
   return (
-    <div className="mb-32 md:mt-0 flex flex-col md:flex-row items-center justify-around w-full">
+    <div className=" my-12  flex flex-col md:flex-row items-center justify-around w-full">
       <p className="text-4xl w-12/12 px-12">
         Powering businesses, small and large
       </p>
-      <div className="w-12/12 my-12">
-        <SwipeableViews style={styles.root} slideStyle={styles.slideContainer}>
+      <div className="w-12/12 my-4">
+        <AutoPlaySwipeableViews
+          style={styles.root}
+          slideStyle={styles.slideContainer}
+        >
           <div style={Object.assign({}, styles.slide, styles.slide1)}>
-            slide n°1
+            Creditmall
           </div>
           <div style={Object.assign({}, styles.slide, styles.slide2)}>
-            slide n°2
+            Credify
           </div>
           <div style={Object.assign({}, styles.slide, styles.slide3)}>
-            slide n°3
+            Yango
           </div>
-        </SwipeableViews>
+          <div style={Object.assign({}, styles.slide, styles.slide3)}>GBC</div>
+        </AutoPlaySwipeableViews>
       </div>
     </div>
   );
