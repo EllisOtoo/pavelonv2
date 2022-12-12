@@ -42,7 +42,7 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
     return (
       <div
         ref={subNavRef}
-        className={`absolute  z-10 left-[8%] m-auto p-12 w-10/12  bg-gray-900 rounded-lg text-white`}
+        className={`absolute  z-40 left-[8%] m-auto p-12 w-10/12  bg-gray-900 rounded-lg text-white`}
       >
         <div ref={subNavContent}>
           <p className="text-2xl">{subNavTitle}</p>

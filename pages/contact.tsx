@@ -1,13 +1,14 @@
 import { EditSharp } from "@mui/icons-material";
 import { Divider, TextField, Typography } from "@mui/material";
 import { useFormik } from "formik";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import * as Yup from "yup";
 import { Input, Button } from "@mui/material";
 import InputMask from "react-input-mask";
 import styles from "./contactUs/contactForm.module.css";
 import SectionHeader from "../components/atoms/SectionHeader";
+import { IndexContext } from "./_app";
 const client = axios.create({
   baseURL: "https://pavelon-server.herokuapp.com/",
   //   baseURL: "http://localhost:8000/",
@@ -15,6 +16,8 @@ const client = axios.create({
 
 export default function Contact_form() {
   const [showSuccess, setShowSuccess] = useState(false);
+
+  const { setShowSubNav, setShowDropDown } = useContext(IndexContext);
 
   useEffect(() => {
     if (showSuccess) {
@@ -63,12 +66,18 @@ export default function Contact_form() {
 
   return (
     <>
-      <div className="w-screen h-screen flex flex-col justify-center">
+      <div
+        onClick={() => {
+          setShowSubNav(false);
+          setShowSubNav(false);
+        }}
+        className="w-screen h-screen flex flex-col justify-center"
+      >
         {/* <div
           className={`${styles.bgPattern} p-12 h-screen w-screen absolute top-0 right-0 z-10`}
         ></div> */}
         <div
-          className={`flex flex-col md:flex-row w-10/12 md:w-8/12 p-12  border-2  justify-between items-center m-auto max-h-screen rounded-lg py-24 z-10 `}
+          className={`flex flex-col md:flex-row w-12/12 md:w-8/12 p-12  border-2  justify-between items-center m-auto max-h-screen rounded-lg py-24 z-10 `}
         >
           <div className="w-full w-full md:w-6/12 h-72">
             <SectionHeader title={"Contact Us"} />
@@ -78,7 +87,7 @@ export default function Contact_form() {
             </p>
           </div>
           <hr />
-          <div className=" flex flex-col justify-center w-full h-full md:w-6/12  p-3">
+          <div className=" flex flex-col justify-center w-full h-full md:w-6/12">
             <form
               className="flex flex-col  h-72"
               onSubmit={formik.handleSubmit}
