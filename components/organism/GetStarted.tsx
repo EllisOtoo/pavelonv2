@@ -43,7 +43,7 @@ function GetStarted() {
             Get Started
           </Button>
         </div>
-        <div className="w-full md:w-6/12 relative flex flex-col items-end">
+        <div className="w-full md:w-6/12 relative flex flex-col items-center">
           <div ref={topCard} className="relative h-20 my-12 w-6/12 opacity-0">
             <Image
               fill
