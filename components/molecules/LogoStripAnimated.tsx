@@ -36,9 +36,9 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 function LogoStripAnimated({ imageUrls, headertitle }) {
   return (
-    <div className="md:w-10/12 flex flex-col md:flex-row items-center md:my-8 justify-between w-full m-auto">
-      <p className="text-4xl w-12/12 px-4 md:px-0">
-        Powering businesses, <br /> small and large
+    <div className=" my-12  flex flex-col md:flex-row items-center justify-around w-full">
+      <p className="text-4xl w-12/12 px-12">
+        Powering businesses, small and large
       </p>
       <div className="w-12/12 my-4">
         <AutoPlaySwipeableViews

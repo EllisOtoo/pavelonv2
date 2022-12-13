@@ -36,8 +36,8 @@ function FullyIntegrated() {
           </div>
 
           <div className="flex flex-col md:flex-row md:w-11/12 justify-around">
-            <div className="w-6/12">
-              <Link href="/kyc" className="">
+            <div className="w-full">
+              <Link href="/kyc" className="w-full">
                 <Button title={"See More"} />
               </Link>
             </div>
@@ -63,7 +63,7 @@ function FullyIntegrated() {
                   <Image
                     src="/fullyIntegrated/middleImage_2_right.1ebd745b.png"
                     alt="creditcard"
-                    width={500}
+                    width={250}
                     height={100}
                   />
                 </div>

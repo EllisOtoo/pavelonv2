@@ -68,13 +68,10 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
                         setShowSubNav(false);
                       }}
                     >
-                      {" "}
                       {item.title}
                     </span>
                   </Link>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  </p>
+                  <p>{item.description}</p>
                 </div>
               </li>
             ))}

@@ -18,10 +18,16 @@ import FingerprintOutlinedIcon from "@mui/icons-material/FingerprintOutlined";
 import AccountBalanceOutlinedIcon from "@mui/icons-material/AccountBalanceOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import {
+  AccountBalance,
+  AccountBox,
+  Balance,
   Book,
+  ContactPage,
   History,
   LogoDev,
+  Money,
   People,
+  Phone,
   SearchRounded,
   Shield,
   Wallet,
@@ -54,11 +60,30 @@ export const IndexContext = createContext<null | object>(null);
 
 const subNavItems = [
   [
-    { title: "Kyc", url: "/kyc", icon: <BadgeOutlinedIcon /> },
+    {
+      title: "Kyc",
+      url: "/kyc",
+      icon: <BadgeOutlinedIcon />,
+      description:
+        "Conduct comprehension KYC on boarding with real time verification",
+    },
     {
       title: "Identity API",
-      url: "/digitalLendingApi",
+      url: "/identity",
       icon: <FingerprintOutlinedIcon />,
+      description: "Authenticate users on your platform",
+    },
+    {
+      title: "Capital by API",
+      url: "/identity",
+      icon: <Balance />,
+      description: "Lend money to users at scale",
+    },
+    {
+      title: "Digital Accounts API",
+      url: "/identity",
+      icon: <AccountBox />,
+      description: "Flexible and simple opening of accounts by users",
     },
   ],
   [
@@ -66,25 +91,50 @@ const subNavItems = [
       title: "BAAS",
       url: "/digitalLendingApi",
       icon: <AccountBalanceOutlinedIcon />,
+      description: "Embed financial services in your platform or products.",
     },
     {
       title: "Investment as a service",
       url: "/digitalLendingApi",
       icon: <Wallet />,
+      description: "Grant your customers the ability to own investments",
     },
     {
       title: "Insurance As A Service",
       url: "/digitalLendingApi",
       icon: <Shield />,
+      description: "Embed insurance in your platform",
     },
   ],
   [
-    { title: "Creditmall", url: "/digitalLendingApi", icon: <Book /> },
-    { title: "Credify", url: "/digitalLendingApi", icon: <Book /> },
+    {
+      title: "Creditmall",
+      url: "/digitalLendingApi",
+      icon: <Book />,
+      description:
+        "How Credit Mall moved from zero to hero using Pavelon’s API.",
+    },
+    {
+      title: "Credify",
+      url: "/digitalLendingApi",
+      icon: <Book />,
+      description:
+        "How credify used Pavelon’s API to create an end to end solution for financial institution.",
+    },
   ],
   [
-    { title: "About Us", url: "/digitalLendingApi", icon: <History /> },
-    { title: "Team", url: "/digitalLendingApi", icon: <People /> },
+    {
+      title: "Contact",
+      url: "/digitalLendingApi",
+      icon: <Phone />,
+      description: "asasjjsj",
+    },
+    /*  {
+      title: "Team",
+      url: "/digitalLendingApi",
+      icon: <People />,
+      description: "",
+    }, */
   ],
 ];
 

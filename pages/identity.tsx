@@ -67,10 +67,7 @@ const SwipeableImageGallery = () => {
 const KYC = () => {
   return (
     <div>
-      <HeaderArea
-        title={"Easiest way to Verify and Onboard users."}
-        imageUrl="/IdentityApi/identity.png"
-      >
+      <HeaderArea title={"Identity API"} imageUrl="/IdentityApi/identity.png">
         <p>
           Verify Phone Numbers, ID Cards, and Addresses. Verify user’s consent
           in real-time with consent verification. Know that people are who they
@@ -91,44 +88,6 @@ const KYC = () => {
             voice, and waits for their response. The check API endpoint Verify
             checks the user’s input matches the code. If they match, we register
             the phone number as approved.
-          </p>
-        </BasicSection>
-        <Divider className="w-10/12 m-auto my-12" />
-        <BasicSection title={"ID Verification"}>
-          <p>
-            Validate users by allowing users to upload a picture of their
-            national ID. Details and the photograph on the ID must match that of
-            the details provided by a new user as well as a live photograph of
-            the new user to prevent fraudsters and impersonators from gaining
-            access to the platform.
-          </p>
-        </BasicSection>
-        <BasicSection title={"Consent Verification"}>
-          <p>
-            An innovative way to get the customer’s approval. Verify user’s
-            consent in real-time with consent verification. Authenticate
-            customers with just a live selfie with the user holding their ID
-            Card. Fraud and Identity theft are rising and simple ‘I agree’
-            checkboxes are not enough to take the user’s consent. They don’t
-            provide any adequate evidence on who checked that box. Integrate
-            Pavelon state-of-the-art Consent Verification Service to take the
-            digital consent of your customers before proceeding. With
-            anti-spoofing measures and advanced AI technology, Pavelon verifies
-            and authenticates the user’s identity and consent note in real-time.
-          </p>
-        </BasicSection>
-        <BasicSection title={"Address Verification"}>
-          <p>
-            An innovative way to get the customer’s approval. Verify user’s
-            consent in real-time with consent verification. Authenticate
-            customers with just a live selfie with the user holding their ID
-            Card. Fraud and Identity theft are rising and simple ‘I agree’
-            checkboxes are not enough to take the user’s consent. They don’t
-            provide any adequate evidence on who checked that box. Integrate
-            Pavelon state-of-the-art Consent Verification Service to take the
-            digital consent of your customers before proceeding. With
-            anti-spoofing measures and advanced AI technology, Pavelon verifies
-            and authenticates the user’s identity and consent note in real-time.
           </p>
         </BasicSection>
       </div>

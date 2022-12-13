@@ -5,7 +5,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea, Paper } from "@mui/material";
+import { Button, CardActionArea, Paper } from "@mui/material";
 import SectionWithIcon from "../molecules/SectionWithIcon";
 
 export default function BasicSection({
@@ -18,12 +18,10 @@ export default function BasicSection({
   return (
     <div className={`flex flex-col md:flex-row`}>
       <div
-        className={`w-10/12 m-auto flex flex-col my-12 border-l pl-4 items-start md:flex-row md:items-stretch ${
+        className={`w-10/12 m-auto flex flex-col my-12 border-l md:gap-12 pl-4 items-start md:flex-row md:items-stretch ${
           reverse && "md:flex-row-reverse"
         }  border-black`}
       >
-        <SectionHeader textSize={"2rem"} title={title} />
-        <div>{children}</div>
         {imageUrl ? (
           <Image alt="Image" width={300} height={400} src={imageUrl} />
         ) : (
@@ -31,6 +29,12 @@ export default function BasicSection({
             Placeholder
           </div>
         )}
+
+        <div className="flex flex-col md:w-8/12 gap-8 items-start">
+          <SectionHeader textSize={"2rem"} title={title} />
+          <div>{children}</div>
+          <Button variant="outlined">Get started</Button>
+        </div>
       </div>
     </div>
   );

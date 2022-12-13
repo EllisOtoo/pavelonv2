@@ -46,27 +46,14 @@ function NavBar() {
     setExpandedNavHeight(navBarRef.current.getClientRects()[0].height);
   };
 
-  const hideDropDown = (e) => {
-    if (navBarRef.current && !navBarRef.current.contains(e.target)) {
-      setShowDropDown(false);
-      setShowSubNav(false);
-    }
-  };
-
   console.log("from Context", showSubNav);
   useEffect(() => {
-    document.addEventListener("click", hideDropDown);
     if (showDropDown) {
-      // Condition only runs on mobile since showDropDown state toggles to true there
       setExpandedNavHeight(
         menuList.current.getClientRects()[0].height +
           navBarRef.current.getClientRects()[0].height
       );
     }
-
-    return () => {
-      document.removeEventListener("click", hideDropDown);
-    };
   }, [showDropDown]);
 
   return (
