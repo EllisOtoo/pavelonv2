@@ -40,15 +40,15 @@ function HeaderArea({ title = "Hello Section", children, imageUrl }) {
 
   return (
     <div
-      onMouseOver={(e) => {
-        console.log("e.target");
-        if (
-          e.target.className !== "w-10/12 m-auto h-2 left-[8%] absolute top-0"
-        ) {
-          setShowSubNav(false);
-          setShowDropDown(false);
-        }
-      }}
+      // onMouseOver={(e) => {
+      //   console.log("e.target");
+      //   if (
+      //     e.target.className !== "w-10/12 m-auto h-2 left-[8%] absolute top-0"
+      //   ) {
+      //     setShowSubNav(false);
+      //     setShowDropDown(false);
+      //   }
+      // }}
       className={`relative flex flex-col $ py-16 md:py-24 gap-1 items-center md:flex-row bg-sky-100 w-12/12 md:justify-around`}
     >
       <div className="w-10/12 m-auto h-2 left-[8%] absolute top-0"></div>

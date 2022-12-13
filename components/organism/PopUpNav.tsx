@@ -28,12 +28,20 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
     });
   });
 
+  const hideElement = (e) => {
+    if (subNavRef.current && !subNavRef.current.contains(e.target)) {
+      setShowSubNav(false);
+    }
+  };
+
   useEffect(() => {
+    document.addEventListener("click", hideElement);
     anime({
       targets: subNavRef.current,
       translateY: 2,
     });
     return () => {
+      document.removeEventListener("click", hideElement);
       anime.remove(subNavRef.current);
     };
   });
