@@ -37,7 +37,7 @@ function NavBar() {
         { id: 0, title: "Products", subItems: ["KYC", "Two"] },
         { id: 1, title: "Solutions", subItems: ["Two", "Three"] },
         { id: 2, title: "Case Studies", subItems: ["Credify", "GCB"] },
-        { id: 3, title: "Products", subItems: ["Credify", "GCB"] },
+        { id: 3, title: "Company", subItems: ["About Us", "Team"] },
       ]}
     />
   );

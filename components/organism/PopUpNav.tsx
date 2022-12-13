@@ -50,7 +50,7 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
           <ul className="flex flex-col md:flex-row">
             {menuToDisplay.map((item) => (
               <li key={item} className="text-sky-100 flex gap-12">
-                <AppsSharpIcon sx={{ color: "slateblue" }} />
+                {item.icon}
                 <div className="cursor-pointer w-6/12">
                   <Link href={item.url}>
                     <span

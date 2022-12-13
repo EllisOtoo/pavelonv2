@@ -13,6 +13,20 @@ import PopUpNav from "../components/organism/PopUpNav";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import TabSwitchTest from "../components/molecules/TabSwitchTest";
+import BadgeOutlinedIcon from "@mui/icons-material/BadgeOutlined";
+import FingerprintOutlinedIcon from "@mui/icons-material/FingerprintOutlined";
+import AccountBalanceOutlinedIcon from "@mui/icons-material/AccountBalanceOutlined";
+import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
+import {
+  Book,
+  History,
+  LogoDev,
+  People,
+  SearchRounded,
+  Shield,
+  Wallet,
+} from "@mui/icons-material";
+import { Zoom } from "@mui/material";
 
 const theme = createTheme({
   status: {
@@ -40,23 +54,37 @@ export const IndexContext = createContext<null | object>(null);
 
 const subNavItems = [
   [
-    { title: "Kyc", url: "/kyc" },
-    { title: "Identity API", url: "/digitalLendingApi" },
+    { title: "Kyc", url: "/kyc", icon: <BadgeOutlinedIcon /> },
+    {
+      title: "Identity API",
+      url: "/digitalLendingApi",
+      icon: <FingerprintOutlinedIcon />,
+    },
   ],
   [
-    { title: "BAAS", url: "/digitalLendingApi" },
-    { title: "Investment As A Service", url: "/digitalLendingApi" },
-    { title: "Insurance As A Service", url: "/digitalLendingApi" },
+    {
+      title: "BAAS",
+      url: "/digitalLendingApi",
+      icon: <AccountBalanceOutlinedIcon />,
+    },
+    {
+      title: "Investment As A Service",
+      url: "/digitalLendingApi",
+      icon: <Wallet />,
+    },
+    {
+      title: "Insurance As A Service",
+      url: "/digitalLendingApi",
+      icon: <Shield />,
+    },
   ],
   [
-    { title: "Creditmall", url: "/digitalLendingApi" },
-    { title: "Credify", url: "/digitalLendingApi" },
+    { title: "Creditmall", url: "/digitalLendingApi", icon: <Book /> },
+    { title: "Credify", url: "/digitalLendingApi", icon: <Book /> },
   ],
   [
-    { title: "Digital Lending API", url: "/digitalLendingApi" },
-    { title: "Digital Lending API", url: "/digitalLendingApi" },
-    { title: "Digital Lending API", url: "/digitalLendingApi" },
-    { title: "Digital Lending API", url: "/digitalLendingApi" },
+    { title: "About Us", url: "/digitalLendingApi", icon: <History /> },
+    { title: "Team", url: "/digitalLendingApi", icon: <People /> },
   ],
 ];
 
