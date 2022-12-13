@@ -26,6 +26,7 @@ function HeaderArea({ title = "Hello Section", children, imageUrl }) {
   // import { useInView } from "framer-motion"
 
   useEffect(() => {
+    // document.addEventListener("click", hideDropDown);
     inView
       ? anime({
           targets: cardRef.current,
@@ -45,7 +46,6 @@ function HeaderArea({ title = "Hello Section", children, imageUrl }) {
       //   if (
       //     e.target.className !== "w-10/12 m-auto h-2 left-[8%] absolute top-0"
       //   ) {
-      //     setShowSubNav(false);
       //     setShowDropDown(false);
       //   }
       // }}
