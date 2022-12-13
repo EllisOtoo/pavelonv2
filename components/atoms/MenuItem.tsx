@@ -23,7 +23,7 @@ function MenuItem({ menu }: MenuProp) {
   };
 
   const collapse = (e) => {
-    setShowSubNav(false);
+    // setShowSubNav(false);
   };
 
   return (

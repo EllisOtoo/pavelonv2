@@ -68,7 +68,7 @@ const subNavItems = [
       icon: <AccountBalanceOutlinedIcon />,
     },
     {
-      title: "Investment As A Service",
+      title: "Investment as a service",
       url: "/digitalLendingApi",
       icon: <Wallet />,
     },

@@ -31,7 +31,7 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
   useEffect(() => {
     anime({
       targets: subNavRef.current,
-      translateY: 5,
+      translateY: 2,
     });
     return () => {
       anime.remove(subNavRef.current);
@@ -54,7 +54,7 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
                 <div className="cursor-pointer w-6/12">
                   <Link href={item.url}>
                     <span
-                      className="font-bold"
+                      className="font-light text-xl"
                       onClick={() => {
                         setShowDropDown(false);
                         setShowSubNav(false);
