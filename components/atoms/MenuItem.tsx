@@ -38,7 +38,7 @@ function MenuItem({ menu }: MenuProp) {
       onMouseLeave={collapse}
     >
       {menu.title}{" "}
-      {matches ? <span>+</span> : <KeyboardArrowDownOutlinedIcon />}
+      {matches ? <span>{"+"}</span> : <KeyboardArrowDownOutlinedIcon />}
     </li>
   );
 }
