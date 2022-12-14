@@ -55,14 +55,14 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
         <div ref={subNavContent}>
           <p className="text-2xl">{subNavTitle}</p>
           <hr className={"my-4"} />
-          <ul className="flex flex-col md:flex-row">
+          <ul className="flex flex-col md:grid md:grid-flow-col md:auto-cols-fr">
             {menuToDisplay.map((item) => (
               <li key={item} className="text-sky-100 flex gap-12">
                 {item.icon}
                 <div className="cursor-pointer w-6/12">
                   <Link href={item.url}>
                     <span
-                      className="font-light text-xl"
+                      className="font-bold text-xl"
                       onClick={() => {
                         setShowDropDown(false);
                         setShowSubNav(false);
@@ -71,6 +71,7 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
                       {item.title}
                     </span>
                   </Link>
+                  <hr style={{ width: "2rem" }} />
                   <p>{item.description}</p>
                 </div>
               </li>

@@ -46,8 +46,16 @@ function NavBar() {
     setExpandedNavHeight(navBarRef.current.getClientRects()[0].height);
   };
 
+  const hideNavAndPopUp = (e) => {
+    if (navBarRef.current && !navBarRef.current.contains(e.target)) {
+      setShowDropDown(false);
+      setShowSubNav(false);
+    }
+  };
+
   console.log("from Context", showSubNav);
   useEffect(() => {
+    document.addEventListener("click", hideNavAndPopUp);
     if (showDropDown) {
       setExpandedNavHeight(
         menuList.current.getClientRects()[0].height +
