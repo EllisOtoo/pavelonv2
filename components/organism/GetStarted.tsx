@@ -23,9 +23,8 @@ function GetStarted() {
   }, [inView]);
 
   return (
-    <div className="w-full md:flex bg-gray-200 py-24">
-      <div className="w-10/12 flex-col md:flex m-auto">
-        <hr />
+    <div className="w-full bg-gray-200 py-24">
+      <div className="w-10/12 flex flex-col md:flex-row m-auto">
         <div className="md:w-6/12">
           <p>BUILDING CREDIT PRODUCTS HAS NEVER BEEN EASIER</p>
           <p className="text-3xl font-bold">Ready to get Started?</p>
@@ -43,7 +42,7 @@ function GetStarted() {
             Get Started
           </Button>
         </div>
-        <div className="w-full md:w-6/12 relative flex flex-col items-center">
+        <div className="w-full md:w-4/12 relative flex flex-col items-center">
           <div ref={topCard} className="relative h-20 my-12 w-6/12 opacity-0">
             <Image
               fill

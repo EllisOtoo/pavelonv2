@@ -60,7 +60,7 @@ function HeaderArea({ title = "Hello Section", children, imageUrl }) {
           {title}
         </p>
         {children}
-        <div className="w-8/12 flex flex-col gap-4">
+        <div className="flex flex-col gap-4">
           <Buttons title="Start now" />
         </div>
       </div>

@@ -11,7 +11,7 @@ const styles = {
     padding: "0 0px",
   },
   slideContainer: {
-    padding: "0 1px",
+    padding: "0 0px",
   },
   slide: {
     padding: 15,
@@ -36,9 +36,11 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 function LogoStripAnimated({ imageUrls, headertitle }) {
   return (
-    <div className=" my-12  flex flex-col md:flex-row items-center justify-around w-10/12 m-auto">
-      <p className="text-4xl w-12/12">Powering businesses, small and large</p>
-      <div className="w-12/12 my-4">
+    <div className="my-12  flex flex-col md:flex-row items-center justify-between w-10/12 m-auto">
+      <p className="text-4xl w-12/12">
+        Powering businesses, <br /> small and large
+      </p>
+      <div className="w-full my-4">
         <AutoPlaySwipeableViews
           style={styles.root}
           slideStyle={styles.slideContainer}
