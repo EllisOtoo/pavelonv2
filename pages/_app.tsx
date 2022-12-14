@@ -101,7 +101,7 @@ const subNavItems = [
       description: "Grant your customers the ability to own investments",
     },
     {
-      title: "Insurance As A Service",
+      title: "Insurance as a service",
       url: "/digitalLendingApi",
       icon: <Shield />,
       description: "Embed insurance in your platform",
