@@ -31,6 +31,7 @@ import {
   SearchRounded,
   Shield,
   Wallet,
+  EmojiPeople,
 } from "@mui/icons-material";
 import { Zoom } from "@mui/material";
 
@@ -127,14 +128,20 @@ const subNavItems = [
       title: "Contact",
       url: "/digitalLendingApi",
       icon: <Phone />,
-      description: "asasjjsj",
+      description: "",
     },
-    /*  {
-      title: "Team",
+    {
+      title: "Our Story",
       url: "/digitalLendingApi",
       icon: <People />,
       description: "",
-    }, */
+    },
+    {
+      title: "Join Us",
+      url: "/digitalLendingApi",
+      icon: <EmojiPeople />,
+      description: "",
+    },
   ],
 ];
 
