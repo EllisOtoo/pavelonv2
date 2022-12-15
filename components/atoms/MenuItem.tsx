@@ -26,9 +26,10 @@ function MenuItem({ menu }: MenuProp) {
   }, [showSubNav]);
 
   const expandRelativeMenu = (e) => {
+    console.log(e.target.name);
     if (matches && e.target) {
-      e.target.children[0].textContent = "-";
-      console.log(e.target);
+      if (e.target.children[0]) e.target.children[0].textContent = "-";
+      // console.log(e.target.name);
     }
     // setShowSubNav(!showSubNav);
     setShowSubNav(true);
@@ -38,7 +39,7 @@ function MenuItem({ menu }: MenuProp) {
 
   const collapse = (e) => {
     if (matches && e.target) {
-      e.target.children[0].textContent = "+";
+      if (e.target.children[0]) e.target.children[0].textContent = "+";
     }
     // setShowSubNav(false);
   };
@@ -51,7 +52,6 @@ function MenuItem({ menu }: MenuProp) {
       //   // setShowSubNav(true);
       // }}
       // onClick={()=> {}}
-
       onMouseEnter={expandRelativeMenu}
       // onClick={expandRelativeMenu}
       onMouseLeave={collapse}

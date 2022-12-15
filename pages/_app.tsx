@@ -96,7 +96,7 @@ const subNavItems = [
     },
     {
       title: "Investment as a service",
-      url: "/digitalLendingApi",
+      url: "/investmentAsAService",
       icon: <Wallet />,
       description: "Grant your customers the ability to own investments",
     },

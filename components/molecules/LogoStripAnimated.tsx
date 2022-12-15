@@ -4,11 +4,20 @@ import SectionHeader from "../atoms/SectionHeader";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import { Paper, useMediaQuery } from "@mui/material";
+import {
+  CarouselProvider,
+  Slider,
+  Slide,
+  ButtonBack,
+  ButtonNext,
+} from "pure-react-carousel";
+import "pure-react-carousel/dist/react-carousel.es.css";
+import "pure-react-carousel/dist/react-carousel.es.css";
 
 const styles = {
   root: {
     // padding: "0 30px", /* Show some extra logo on side */
-    padding: "0 30px",
+    padding: "0 0px",
   },
   slideContainer: {
     padding: "0 0px",
@@ -38,51 +47,55 @@ function LogoStripAnimated({ imageUrls, headertitle }) {
   const matches = useMediaQuery("(max-width:600px)");
 
   return (
-    <div className="my-12 flex flex-col md:flex-row items-center justify-between w-10/12 m-auto">
-      <p className="text-4xl w-12/12 md:w-6/12">
-        Powering businesses, {matches ? <br /> : ""} small and large
-      </p>
+    <>
+      {" "}
+      <div className="my-12 flex flex-col md:flex-row items-center justify-between w-10/12 m-auto">
+        <p className="text-4xl w-12/12 md:w-6/12">
+          Powering businesses, {matches ? <br /> : ""} small and large
+        </p>
 
-      <div className="w-full my-4 md:w-3/12">
-        <AutoPlaySwipeableViews
-          style={styles.root}
-          slideStyle={styles.slideContainer}
-        >
-          <div style={Object.assign({}, styles.slide, styles.slide1)}>
-            <Image
-              width={200}
-              height={50}
-              alt=""
-              src={"/logostrip/credify.png"}
-            />
-          </div>
-          <div style={Object.assign({}, styles.slide, styles.slide2)}>
-            <Image
-              width={200}
-              height={50}
-              alt=""
-              src={"/logostrip/creditmall.png"}
-            />
-          </div>
-          <div style={Object.assign({}, styles.slide, styles.slide3)}>
-            <Image
-              width={200}
-              height={50}
-              alt=""
-              src={"/logostrip/yango.f54ab341.png"}
-            />
-          </div>
-          <div style={Object.assign({}, styles.slide, styles.slide4)}>
-            <Image
-              width={200}
-              height={50}
-              alt=""
-              src={"/logostrip/gcb_logo.cb4c2a8d.png"}
-            />
-          </div>
-        </AutoPlaySwipeableViews>
+        <div className="w-full my-4 md:w-3/12">
+          <AutoPlaySwipeableViews
+            style={styles.root}
+            slideStyle={styles.slideContainer}
+          >
+            <div style={Object.assign({}, styles.slide, styles.slide2)}>
+              <Image
+                width={200}
+                height={50}
+                alt=""
+                src={"/logostrip/creditmall.png"}
+              />
+            </div>
+            <div style={Object.assign({}, styles.slide, styles.slide1)}>
+              <Image
+                width={200}
+                height={50}
+                alt=""
+                src={"/logostrip/credify.png"}
+              />
+            </div>
+            <div style={Object.assign({}, styles.slide, styles.slide3)}>
+              <Image
+                width={200}
+                height={50}
+                alt=""
+                src={"/logostrip/yango.f54ab341.png"}
+              />
+            </div>
+            <div style={Object.assign({}, styles.slide, styles.slide4)}>
+              <Image
+                width={200}
+                height={50}
+                alt=""
+                src={"/logostrip/gcb_logo.cb4c2a8d.png"}
+              />
+            </div>
+          </AutoPlaySwipeableViews>
+        </div>
       </div>
-    </div>
+      <div></div>
+    </>
   );
 }
 

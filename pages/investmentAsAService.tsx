@@ -4,13 +4,24 @@ import shield from "../../assets/BAAS/shield.png";
 import phoneImage from "../../assets/BAAS/phone.png";
 import dashboard from "../../assets/BAAS/dashboard.png";
 import { Link } from "@mui/material";
-import { Image, KeyboardArrowRightOutlined, Money } from "@mui/icons-material";
+import {
+  CheckBox,
+  CheckBoxRounded,
+  CheckCircle,
+  Image,
+  KeyboardArrowRightOutlined,
+  Money,
+} from "@mui/icons-material";
 import HeaderArea from "../components/organism/HeaderArea";
 import HeaderSubImage from "../components/organism/HeaderSubImage";
 import BaasBasicSection from "../components/organism/BaasBasicSection";
 import TabSwitchTest from "../components/molecules/TabSwitchTest";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import anime from "animejs";
+import gsap from "gsap";
+import { AnimatePresence, motion } from "framer-motion";
+import Fade from "@mui/material/Fade";
+
 // import BAASSection  from "../components/organism/BoldSection";
 
 const BAAS_Section_Defaults = {
@@ -49,71 +60,181 @@ const InvestmentAsAService = () => {
 };
 
 const HeavyLiftingTabSwitch = () => {
-  const [startingMenuItemHeight, setStartHeight] = useState(0);
-  const [startingMenuItemWidth, setStartWidth] = useState(0);
-  const [startingMeuLeftX, setStartingMeuLeftX] = useState(0);
-  const [startingTopY, setstartingTopY] = useState(0);
+  const [sliderWidth, setSliderWidth] = useState(0);
+  const [switched, setSwitch] = useState(false);
+  const [choice, setChoice] = useState(true);
 
-  const startingMenuItem = useRef(null);
-  const pillRef = useRef(null);
-  const menuParent = useRef(null);
+  const switchDiv = useRef(null);
+  const container = useRef(null);
+  const withoutPav = useRef(null);
+  const rightBox = useRef(null);
+  const leftBox = useRef(null);
+  const svgPath = useRef(null);
+
+  let containerProps;
+  let motionRectProps;
+  let withoutPavProps;
+
+  const intro = () => {
+    var tl = gsap.timeline({ defaults: { duration: 0.4 } });
+    tl.to(switchDiv.current, {
+      x: containerProps.width - withoutPavProps.width,
+    })
+      .to(
+        rightBox.current,
+        {
+          x: "5rem",
+        },
+        "<"
+      )
+      .to(leftBox.current, { x: "-5rem" }, "<");
+
+    return tl;
+  };
+
+  const conclusion = () => {
+    var tl = gsap.timeline();
+    tl.to(switchDiv.current, { x: 0, duration: 0.4 })
+      .to(
+        rightBox.current,
+        {
+          x: 0,
+        },
+        "<"
+      )
+      .to(leftBox.current, { x: 0 }, "<");
+
+    return tl;
+  };
+
+  const switchLength = () => {
+    setSliderWidth((prev) => withoutPavProps.width + prev);
+  };
+
+  const moveRight = () => {
+    setSwitch(true);
+    intro();
+  };
+
+  const moveLeft = () => {
+    conclusion();
+    setSwitch(false);
+  };
 
   useLayoutEffect(() => {
-    // window.getComputedStyle(startingMenuItem, null);
-    // console.log(startingMenuItem.current.getComputedStyle());
-    const startingMenuProps = window.getComputedStyle(startingMenuItem.current);
-
-    console.log(startingMenuProps.getPropertyValue("top"));
-
-    setStartHeight(startingMenuItem.current.getBoundingClientRect().height);
-    setStartWidth(startingMenuItem.current.getBoundingClientRect().width);
-    setStartingMeuLeftX(startingMenuItem.current.getBoundingClientRect().left);
-    setstartingTopY(startingMenuItem.current.getBoundingClientRect().top);
-  }, []);
-
-  useEffect(() => {
-    // console.log(
-    //   startingTopY,
-    //   startingMenuItem.current.getBoundingClientRect().top
-    // );
-    const children = Array.from(menuParent.current.children);
-    children.forEach((element) => {
-      element.addEventListener("mouseover", (e) => {
-        anime({
-          targets: pillRef.current,
-          translateX: e.target.getBoundingClientRect().left,
-          width: e.target.getBoundingClientRect().width,
-          height: e.target.getBoundingClientRect().height,
-        });
-      });
-    });
+    withoutPavProps = withoutPav.current.getBoundingClientRect();
+    containerProps = container.current.getBoundingClientRect();
+    motionRectProps = switchDiv.current.getBoundingClientRect();
   });
 
+  useEffect(() => {
+    // intro();
+    setTimeout(() => {
+      setSliderWidth(withoutPavProps.width);
+    });
+  }, []);
+
   return (
-    <div className="bg-sky-200 h-24 flex flex-col justify-center">
-      <div className="relative">
-        <div
-          ref={menuParent}
-          // className="relative flex z-10 w-10/12 justify-between m-auto"
-          className="relative flex w-10/12 m-auto justify-between z-20"
-        >
-          {/** loop childelements and attach mouseover effect dynamically to all its children instead of hardCoding */}
-          <div className="px-2 bg-sky-900" ref={startingMenuItem}>
-            Without Pavelon
+    <>
+      <div className="my-12">
+        <div className="flex flex-col w-full my-12 justify-center items-center">
+          <h2 className="text-5xl px-10 py-2">
+            {"We’ve done the heavy lifting for you"}
+          </h2>
+          {/* <div ref={container} className=" w-10/12 relative bg-blue-800 "> */}
+          <div ref={container} className=" w-10/12 my-2 md:w-2/12 relative ">
+            <div
+              ref={switchDiv}
+              // className="rounded-full bg-blue-300 h-6 w-32"
+              className="rounded-full bg-blue-300 h-6 "
+              style={{ width: sliderWidth + 10 }}
+            ></div>
+            <div className="absolute flex top-0 justify-between w-full">
+              <div
+                className="cursor-pointer"
+                ref={withoutPav}
+                onClick={moveLeft}
+              >
+                Without Pavelon
+              </div>
+              <div className="cursor-pointer" onClick={moveRight}>
+                With Pavelon
+              </div>
+            </div>
           </div>
-          <div className="bg-sky-900">With Pavelon</div>
         </div>
-        <div
-          ref={pillRef}
-          style={{
-            height: `${startingMenuItemHeight}px`,
-            width: `${startingMenuItemWidth}px`,
-            left: `${startingMeuLeftX}px`,
-          }}
-          className="absolute w-10 top-0 bg-yellow-300 rounded-xl"
-        ></div>
       </div>
-    </div>
+      <div className="w-10/12 md:w-6/12 m-auto my-12">
+        {switched ? (
+          <div className="flex justify-between">
+            <Fade in={true} timeout={1000}>
+              <div className="bg-sky-600 h-12 w-12 rounded-2xl"></div>
+            </Fade>{" "}
+            <Fade in={true} timeout={1000}>
+              <div className="bg-sky-600 h-12 w-12 rounded-2xl"></div>
+            </Fade>{" "}
+            <Fade in={true} timeout={1000}>
+              <div className="bg-sky-600 h-12 w-12 rounded-2xl"></div>
+            </Fade>
+          </div>
+        ) : (
+          <div className="flex justify-between divide-y">
+            <Fade in={true} timeout={1000}>
+              <div className="bg-sky-600 h-12 w-12 rounded-2xl"></div>
+            </Fade>
+            <Fade in={true} timeout={1000}>
+              <div className="bg-sky-600 h-12 w-12 rounded-2xl"></div>
+            </Fade>
+            <Fade in={true} timeout={1000}>
+              <div className="bg-sky-600 h-12 w-12 rounded-2xl"></div>
+            </Fade>
+            <Fade in={true} timeout={1000}>
+              <div className="bg-sky-600 h-12 w-12 rounded-2xl"></div>
+            </Fade>
+            <Fade in={true} timeout={1000}>
+              <div className="bg-sky-600 h-12 w-12 rounded-2xl"></div>
+            </Fade>
+          </div>
+        )}
+      </div>
+      <BaasBasicSection title={"Turn Key Experiences"}>
+        <p>
+          Support your customers’ investment journeys without building your UI
+          from scratch. We offer fully customizable front-end experiences that
+          can be tailored to match your design system.
+        </p>{" "}
+        <ul className=" ml-4 my-4">
+          <li>
+            <CheckCircle /> Fully Customizable
+          </li>
+          <li>
+            <CheckCircle /> Suitable for engagement Access for new investors
+          </li>
+          <li>
+            {" "}
+            <CheckCircle /> Access for new investors
+          </li>
+        </ul>
+      </BaasBasicSection>
+      <BaasBasicSection title={"Developer first APIs"}>
+        <p>
+          For even more control over the user experience, implement using our
+          API. Implementation is quick and simple thanks to our intuitive APIs
+          and thorough documentation.
+        </p>{" "}
+        <ul className=" ml-4 my-4">
+          <li>
+            <CheckCircle /> Developer Friendly
+          </li>
+          <li>
+            <CheckCircle /> Easy to Setup
+          </li>
+          <li>
+            <CheckCircle /> Secure and Complaint
+          </li>
+        </ul>
+      </BaasBasicSection>
+    </>
   );
 };
 
