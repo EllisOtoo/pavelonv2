@@ -90,7 +90,7 @@ const subNavItems = [
   [
     {
       title: "BAAS",
-      url: "/digitalLendingApi",
+      url: "/baas",
       icon: <AccountBalanceOutlinedIcon />,
       description: "Embed financial services in your platform or products.",
     },

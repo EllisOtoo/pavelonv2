@@ -13,9 +13,23 @@ function MenuItem({ menu }: MenuProp) {
   const { setShowSubNav, setSubNavContentIndex, setSubNavTitle, showSubNav } =
     useContext(IndexContext);
 
-  useEffect(() => {}, []);
+  const spanIconRef = React.useRef(null);
 
-  const expandRelativeMenu = () => {
+  useEffect(() => {
+    // if (spanIconRef.current) {
+    //   if (matches && showSubNav) {
+    //     spanIconRef.current.textContent = "-";
+    //   } else {
+    //     spanIconRef.current.textContent = "+";
+    //   }
+    // }
+  }, [showSubNav]);
+
+  const expandRelativeMenu = (e) => {
+    if (matches && e.target) {
+      e.target.children[0].textContent = "-";
+      console.log(e.target);
+    }
     // setShowSubNav(!showSubNav);
     setShowSubNav(true);
     setSubNavContentIndex(menu.id);
@@ -23,6 +37,9 @@ function MenuItem({ menu }: MenuProp) {
   };
 
   const collapse = (e) => {
+    if (matches && e.target) {
+      e.target.children[0].textContent = "+";
+    }
     // setShowSubNav(false);
   };
 
@@ -33,12 +50,18 @@ function MenuItem({ menu }: MenuProp) {
       // onMouseOver={() => {
       //   // setShowSubNav(true);
       // }}
+      // onClick={()=> {}}
+
       onMouseEnter={expandRelativeMenu}
       // onClick={expandRelativeMenu}
       onMouseLeave={collapse}
     >
       {menu.title}{" "}
-      {matches ? <span>{"+"}</span> : <KeyboardArrowDownOutlinedIcon />}
+      {matches ? (
+        <span ref={spanIconRef}>+</span>
+      ) : (
+        <KeyboardArrowDownOutlinedIcon />
+      )}
     </li>
   );
 }
