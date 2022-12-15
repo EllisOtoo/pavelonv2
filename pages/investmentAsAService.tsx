@@ -216,7 +216,7 @@ const HeavyLiftingTabSwitch = () => {
           from scratch. We offer fully customizable front-end experiences that
           can be tailored to match your design system.
         </p>{" "}
-        <ul className=" ml-4 my-4">
+        <ul className="ml-4 my-4 md:my-8 flex flex-col md:gap-4">
           <li>
             <CheckCircle /> Fully Customizable
           </li>
@@ -235,7 +235,7 @@ const HeavyLiftingTabSwitch = () => {
           API. Implementation is quick and simple thanks to our intuitive APIs
           and thorough documentation.
         </p>{" "}
-        <ul className=" ml-4 my-4">
+        <ul className="ml-4 my-4 md:my-8 flex flex-col md:gap-4">
           <li>
             <CheckCircle /> Developer Friendly
           </li>
