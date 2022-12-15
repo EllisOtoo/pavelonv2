@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import anime from "animejs";
 import { useInView } from "framer-motion";
 import { Button } from "@mui/material";
+import Link from "next/link";
 function GetStarted() {
   const topCard = useRef(null);
   const inView = useInView(topCard);
@@ -33,14 +34,16 @@ function GetStarted() {
             products so you can acquire more customers, increase revenue and
             accelerate growth.
           </p>
-
-          <Button
-            sx={{ margin: "10px 0" }}
-            title="Get Started"
-            variant="outlined"
-          >
-            Get Started
-          </Button>
+          <Link href={"/contact"}>
+            {" "}
+            <Button
+              sx={{ margin: "10px 0" }}
+              title="Get Started"
+              variant="outlined"
+            >
+              Get Started
+            </Button>
+          </Link>
         </div>
         <div className="w-full md:w-4/12 relative flex flex-col items-center">
           <div ref={topCard} className="relative h-20 my-12 w-6/12 opacity-0">

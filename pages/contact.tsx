@@ -71,13 +71,13 @@ export default function Contact_form() {
           setShowSubNav(false);
           setShowSubNav(false);
         }}
-        className="w-screen h-screen flex flex-col justify-center"
+        className="flex my-24 flex-col justify-center"
       >
         {/* <div
           className={`${styles.bgPattern} p-12 h-screen w-screen absolute top-0 right-0 z-10`}
         ></div> */}
         <div
-          className={`flex flex-col md:flex-row w-12/12 md:w-8/12 p-12  border-2  justify-between items-center m-auto max-h-screen rounded-lg py-24 z-10 `}
+          className={`flex flex-col md:flex-row w-12/12 md:w-8/12 p-12  justify-between items-center m-auto max-h-screen rounded-lg py-24 z-10 `}
         >
           <div className="w-full w-full md:w-6/12 h-72">
             <SectionHeader title={"Contact Us"} />
@@ -109,7 +109,7 @@ export default function Contact_form() {
               />
 
               <InputMask
-                mask={"999-999-9999"}
+                mask={"999-999-999-9999"}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.phone_Number}
