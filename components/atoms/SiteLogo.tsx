@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useRef } from "react";
 import Image from "next/image";
-import { IndexContext } from "../../pages";
 import Link from "next/link";
+import { IndexContext } from "../../pages/_app";
 
 function SiteLogo({ dimensions = null }) {
-  // const { matches } = useContext(IndexContext);
-  const matches = true;
+  const { subNavTitle, showSubNav, setShowSubNav, setShowDropDown } =
+    useContext(IndexContext);
+  // const matches = true;
   return (
     <div
       className={`${dimensions ? dimensions.height : "h-8"} ${
@@ -13,7 +14,13 @@ function SiteLogo({ dimensions = null }) {
       } relative`}
     >
       {" "}
-      <Link href={"/"}>
+      <Link
+        onClick={() => {
+          setShowDropDown(false);
+          setShowSubNav(false);
+        }}
+        href={"/"}
+      >
         <Image fill src="/PavelonLogoWhite.png" alt="Pavelon Logo" />
       </Link>
     </div>
