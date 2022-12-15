@@ -5,7 +5,7 @@ import phoneImage from "../../assets/BAAS/phone.png";
 import dashboard from "../../assets/BAAS/dashboard.png";
 import { Link } from "@mui/material";
 import { Image, Money } from "@mui/icons-material";
-import HeaderArea from "../components/organism/HeaderArea";
+import HeaderArea from "../components/organism/HeaderAreaLargerImages";
 // import BAASSection  from "../components/organism/BoldSection";
 
 const BAAS_Section_Defaults = {

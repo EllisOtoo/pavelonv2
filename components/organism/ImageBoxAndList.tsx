@@ -9,7 +9,7 @@ function ImageBoxandList({ image, listItems, flexCol }) {
         flexCol && "flex-col"
       } md:flex-row w-10/12 m-auto gap-12 py-12`}
     >
-      <div className="relative h-40 w-12/12 md:w-6/12 md:h-96">
+      <div className="relative h-44 w-12/12 md:w-6/12 md:h-96">
         <Image fill src={image} alt="" />
       </div>
 

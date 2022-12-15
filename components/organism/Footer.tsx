@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="w-12/12 flex flex-col md:flex-row gap-4 m-auto bg-gray-900 text-white p-12 ">
       <div className="w-10/12 flex flex-col md:flex-row m-auto  md:my-12">
         <SiteLogo dimensions={{ width: "w-20", height: "h-4" }} />
-        <div className="my-12 w-full flex flex-col md:flex-row md:my-0 md:justify-around">
+        <div className="my-8 w-full flex flex-col md:flex-row md:my-0 md:justify-around">
           <p>
             Copyright © 2022 Codat Limited. <br /> All rights reserved.{" "}
           </p>
