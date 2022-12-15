@@ -1,6 +1,6 @@
 import Head from "next/head";
 import LogoStripAnimated from "../components/molecules/LogoStripAnimated";
-import HeaderArea from "../components/organism/HeaderAreaLargerImages";
+import HeaderArea from "../components/organism/HeaderArea";
 import FullyIntegrated from "../components/organism/FullyIntegrated";
 import BuiltInMinutes from "../components/organism/BuiltInMinutes";
 import PavelonAPIs from "../components/organism/ImageBoxAndList";

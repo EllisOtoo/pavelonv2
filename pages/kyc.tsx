@@ -1,4 +1,4 @@
-import HeaderArea from "../components/organism/HeaderAreaLargerImages";
+import HeaderArea from "../components/organism/HeaderArea";
 import SwipeableViews from "react-swipeable-views";
 import React from "react";
 import Image from "next/image";

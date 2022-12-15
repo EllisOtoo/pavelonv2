@@ -7,7 +7,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { createContext, useState } from "react";
 
-import HeaderArea from "../components/organism/HeaderAreaLargerImages";
+import HeaderArea from "../components/organism/HeaderArea";
 import NavBar from "../components/organism/NavBar";
 import PopUpNav from "../components/organism/PopUpNav";
 import useMediaQuery from "@mui/material/useMediaQuery";
