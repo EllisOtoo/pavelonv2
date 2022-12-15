@@ -81,8 +81,8 @@ const HeavyLiftingTabSwitch = () => {
       element.addEventListener("mouseover", (e) => {
         anime({
           targets: pillRef.current,
-          translateX: e.target.getBoundingClientRect().left - 10,
-          width: e.target.getBoundingClientRect().width + 20,
+          translateX: e.target.getBoundingClientRect().left,
+          width: e.target.getBoundingClientRect().width,
           height: e.target.getBoundingClientRect().height,
         });
       });
@@ -90,25 +90,29 @@ const HeavyLiftingTabSwitch = () => {
   });
 
   return (
-    <div className="relative">
-      <div
-        ref={menuParent}
-        className="relative px-4 flex z-10 py-4 px-2 w-10/12 justify-between m-auto"
-      >
-        {/** loop childelements and attach mouseover effect dynamically to all its children instead of hardCoding */}
-        <div ref={startingMenuItem}>Without Pavelon</div>
-        <div>With Pavelon</div>
+    <div className="bg-sky-200 h-24 flex flex-col justify-center">
+      <div className="relative">
+        <div
+          ref={menuParent}
+          // className="relative flex z-10 w-10/12 justify-between m-auto"
+          className="relative flex w-10/12 m-auto justify-between z-20"
+        >
+          {/** loop childelements and attach mouseover effect dynamically to all its children instead of hardCoding */}
+          <div className="px-2 bg-sky-900" ref={startingMenuItem}>
+            Without Pavelon
+          </div>
+          <div className="bg-sky-900">With Pavelon</div>
+        </div>
+        <div
+          ref={pillRef}
+          style={{
+            height: `${startingMenuItemHeight}px`,
+            width: `${startingMenuItemWidth}px`,
+            left: `${startingMeuLeftX}px`,
+          }}
+          className="absolute w-10 top-0 bg-yellow-300 rounded-xl"
+        ></div>
       </div>
-      <div
-        ref={pillRef}
-        style={{
-          height: `${startingMenuItemHeight}px`,
-          width: `${startingMenuItemWidth + 20}px`,
-          left: `${startingMeuLeftX}px`,
-          top: `${startingTopY}px`,
-        }}
-        className="absolute w-10  bg-yellow-300 rounded-xl"
-      ></div>
     </div>
   );
 };
