@@ -3,7 +3,7 @@ import ModernChart from "../../assets/BAAS/modernFin.png";
 import shield from "../../assets/BAAS/shield.png";
 import phoneImage from "../../assets/BAAS/phone.png";
 import dashboard from "../../assets/BAAS/dashboard.png";
-import { Link } from "@mui/material";
+import { Divider, Link } from "@mui/material";
 import {
   CheckBox,
   CheckBoxRounded,
@@ -66,6 +66,7 @@ const HeavyLiftingTabSwitch = () => {
 
   const switchDiv = useRef(null);
   const container = useRef(null);
+  const withPav = useRef(null);
   const withoutPav = useRef(null);
   const rightBox = useRef(null);
   const leftBox = useRef(null);
@@ -74,11 +75,12 @@ const HeavyLiftingTabSwitch = () => {
   let containerProps;
   let motionRectProps;
   let withoutPavProps;
+  let withPavProps;
 
   const intro = () => {
     var tl = gsap.timeline({ defaults: { duration: 0.4 } });
     tl.to(switchDiv.current, {
-      x: containerProps.width - withoutPavProps.width,
+      x: containerProps.width - (withPavProps.width + 7),
     })
       .to(
         rightBox.current,
@@ -123,16 +125,21 @@ const HeavyLiftingTabSwitch = () => {
 
   useLayoutEffect(() => {
     withoutPavProps = withoutPav.current.getBoundingClientRect();
+    withPavProps = withPav.current.getBoundingClientRect();
     containerProps = container.current.getBoundingClientRect();
     motionRectProps = switchDiv.current.getBoundingClientRect();
   });
 
   useEffect(() => {
-    // intro();
-    setTimeout(() => {
+    if (!switched) {
       setSliderWidth(withoutPavProps.width);
-    });
-  }, []);
+      //   setTimeout(() => {
+      //     setSliderWidth(withoutPavProps.width);
+      //   });
+    }
+    if (switched) setSliderWidth(withPavProps.width);
+    // intro();
+  });
 
   return (
     <>
@@ -146,18 +153,24 @@ const HeavyLiftingTabSwitch = () => {
             <div
               ref={switchDiv}
               // className="rounded-full bg-blue-300 h-6 w-32"
-              className="rounded-full bg-blue-300 h-6 "
+              className={`rounded-full ${
+                switched ? `bg-slate-900` : `bg-sky-300`
+              } h-6 p-2`}
               style={{ width: sliderWidth + 10 }}
             ></div>
             <div className="absolute flex top-0 justify-between w-full">
               <div
-                className="cursor-pointer"
+                className="cursor-pointer pl-2"
                 ref={withoutPav}
                 onClick={moveLeft}
               >
                 Without Pavelon
               </div>
-              <div className="cursor-pointer" onClick={moveRight}>
+              <div
+                ref={withPav}
+                className={`cursor-pointer px-1 ${switched && "text-white"}`}
+                onClick={moveRight}
+              >
                 With Pavelon
               </div>
             </div>
@@ -178,21 +191,21 @@ const HeavyLiftingTabSwitch = () => {
             </Fade>
           </div>
         ) : (
-          <div className="flex justify-between divide-y">
+          <div className="flex justify-between">
             <Fade in={true} timeout={1000}>
-              <div className="bg-sky-600 h-12 w-12 rounded-2xl"></div>
+              <div className="bg-sky-300 h-12 w-12 rounded-2xl"></div>
             </Fade>
             <Fade in={true} timeout={1000}>
-              <div className="bg-sky-600 h-12 w-12 rounded-2xl"></div>
+              <div className="bg-sky-300 h-12 w-12 rounded-2xl"></div>
             </Fade>
             <Fade in={true} timeout={1000}>
-              <div className="bg-sky-600 h-12 w-12 rounded-2xl"></div>
+              <div className="bg-sky-300 h-12 w-12 rounded-2xl"></div>
             </Fade>
             <Fade in={true} timeout={1000}>
-              <div className="bg-sky-600 h-12 w-12 rounded-2xl"></div>
+              <div className="bg-sky-300 h-12 w-12 rounded-2xl"></div>
             </Fade>
             <Fade in={true} timeout={1000}>
-              <div className="bg-sky-600 h-12 w-12 rounded-2xl"></div>
+              <div className="bg-sky-300 h-12 w-12 rounded-2xl"></div>
             </Fade>
           </div>
         )}
