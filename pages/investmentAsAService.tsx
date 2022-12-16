@@ -154,7 +154,7 @@ const HeavyLiftingTabSwitch = () => {
               ref={switchDiv}
               // className="rounded-full bg-blue-300 h-6 w-32"
               className={`rounded-full ${
-                switched ? `bg-slate-900` : `bg-sky-300`
+                switched ? `bg-sky-600` : `bg-sky-300`
               } h-6 p-2`}
               style={{ width: sliderWidth + 10 }}
             ></div>
