@@ -47,13 +47,14 @@ function MenuItem({ menu }: MenuProp) {
   return (
     <li
       // onClick={() => setSubNavTitle(menu.title)}
-      className="hover:text-sky-700 cursor-pointer flex justify-between"
+      className="hover:text-sky-700 cursor-pointer flex text-2xl justify-between"
       // onMouseOver={() => {
       //   // setShowSubNav(true);
       // }}
       // onClick={()=> {}}
       onMouseEnter={expandRelativeMenu}
       // onClick={expandRelativeMenu}
+
       onMouseLeave={collapse}
     >
       {menu.title}{" "}
