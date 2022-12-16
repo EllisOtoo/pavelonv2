@@ -16,33 +16,38 @@ function FullyIntegrated() {
     <div className="w-full bg-gray-100 py-12">
       <div className="w-10/12 m-auto">
         {/* BLOCKS STARTS HERE */}
-        <SectionHeader
-          title={
-            "A fully integrated suite of Lending, eCommerce, and Payment products"
-          }
-        />
-        <div className="flex text-base flex-col md:flex-row md:flex-wrap gap-8  my-6">
-          <div className="md:w-4/12">
-            We bring together everything that’s required to build lending into
-            any product - from End User Application using our Digital Lending
-            APIs to Disbursement or Payout. We also offer Card Issuing API for
-            both virtual and physical cards.
-            {/* <Buttons buttonTitle={"See more"} btnBGColor={"primary"} /> */}
-          </div>
-          <div className="md:w-6/12">
-            Pavelon’s products also power “Buy Now, Pay Later” Services using
-            our Commerce API. We also help companies onboard their users,
-            process loans, collect loans, access financial data, and much more.
-          </div>
 
-          <div className="flex flex-col md:flex-row md:w-11/12 justify-around">
-            <div className="w-full">
+        <div className="flex text-base flex-col md:flex-row md:flex-wrap gap-8  my-6">
+          {/*  */}
+
+          <div className="flex flex-col md:flex-row md:w-11/12  justify-end">
+            {/* <div className="w-full">
               <Link href="/kyc" className="w-full">
                 <Button title={"See More"} />
               </Link>
-            </div>
+            </div> */}
 
-            <div className="w-full">
+            <div className="w-full md:w-6/12 flex flex-col gap-y-12">
+              <SectionHeader
+                title={
+                  "A fully integrated suite of Lending, eCommerce, and Payment products"
+                }
+              />
+              <p>
+                We bring together everything that’s required to build lending
+                into any product - from End User Application using our Digital
+                Lending APIs to Disbursement or Payout. We also offer Card
+                Issuing API for both virtual and physical cards.
+              </p>
+              <p>
+                Pavelon’s products also power “Buy Now, Pay Later” Services
+                using our Commerce API. We also help companies onboard their
+                users, process loans, collect loans, access financial data, and
+                much more.
+              </p>
+              {/* <Buttons buttonTitle={"See more"} btnBGColor={"primary"} /> */}
+            </div>
+            <div className="w-full md:w-6/12">
               <div className="flex items-center">
                 <div className="relative flex flex-col items-end">
                   <Image

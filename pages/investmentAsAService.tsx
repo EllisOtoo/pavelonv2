@@ -149,7 +149,7 @@ const HeavyLiftingTabSwitch = () => {
             {"We’ve done the heavy lifting for you"}
           </h2>
           {/* <div ref={container} className=" w-10/12 relative bg-blue-800 "> */}
-          <div ref={container} className=" w-10/12 my-2 md:w-2/12 relative ">
+          <div ref={container} className="w-10/12 my-2 md:w-3/12 relative ">
             <div
               ref={switchDiv}
               // className="rounded-full bg-blue-300 h-6 w-32"
@@ -216,7 +216,7 @@ const HeavyLiftingTabSwitch = () => {
           from scratch. We offer fully customizable front-end experiences that
           can be tailored to match your design system.
         </p>{" "}
-        <ul className="ml-4 my-4 md:my-8 flex flex-col md:gap-4">
+        <ul className="ml-4 my-4 flex flex-col gap-y-2 md:gap-y-4">
           <li>
             <CheckCircle /> Fully Customizable
           </li>
@@ -235,7 +235,7 @@ const HeavyLiftingTabSwitch = () => {
           API. Implementation is quick and simple thanks to our intuitive APIs
           and thorough documentation.
         </p>{" "}
-        <ul className="ml-4 my-4 md:my-8 flex flex-col md:gap-4">
+        <ul className="ml-4 my-4 md:my-8 flex flex-col gap-y-2 md:gap-4">
           <li>
             <CheckCircle /> Developer Friendly
           </li>

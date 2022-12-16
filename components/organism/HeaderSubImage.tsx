@@ -11,7 +11,7 @@ import anime from "animejs";
 import { useInView } from "framer-motion";
 import useInview from "../../hooks/useInView";
 import { IndexContext } from "../../pages/_app";
-import { Divider, useMediaQuery } from "@mui/material";
+import { Divider, Hidden, useMediaQuery } from "@mui/material";
 import { url } from "inspector";
 import Link from "next/link";
 
@@ -19,8 +19,10 @@ function HeaderSubImage({
   title = "Hello Section",
   children,
   imageUrl,
+  noButton,
   reverse,
   subHeader,
+  hidden,
 }) {
   /*  */
   // const { matches } = useContext(IndexContext);
@@ -56,7 +58,7 @@ function HeaderSubImage({
           setShowDropDown(false);
         }
       }}
-      className={`relative flex flex-col $ py-16 md:h-96 md:py-32 items-center md:h-auto md:flex-row bg-sky-100 w-12/12 md:justify-around`}
+      className={`relative flex flex-col $ py-16 md:h-96   md:py-32 items-center md:h-auto md:flex-row bg-sky-100 w-12/12 md:justify-around`}
     >
       <div className="w-10/12 m-auto h-2 left-[8%] absolute top-0"></div>
       <div
@@ -65,7 +67,7 @@ function HeaderSubImage({
         <div className="flex flex-col w-12/12 md:w-6/12 gap-4 overflow-visible">
           <p
             style={{ width: `${matches ? "90vw" : ""}` }}
-            className={`text-5xl text-slate-900 md:text-7xl font-bold ${styles.gradientText}`}
+            className={`text-5xl text-slate-900 md:text-7xl py-2 md:py-3  font-bold ${styles.gradientText}`}
           >
             {title}
           </p>
@@ -77,13 +79,21 @@ function HeaderSubImage({
           </p>
           <Divider className="w-1/5" />
           {children}
-          <div className="flex flex-col gap-4">
-            <Link href={"/contact"}>
-              <Buttons title="Start now" />
-            </Link>
-          </div>
+          {noButton ? (
+            ""
+          ) : (
+            <div className="flex flex-col gap-4">
+              <Link href={"/contact"}>
+                <Buttons title="Start now" />
+              </Link>
+            </div>
+          )}
         </div>
-        <div className="flex w-full h-72 md:h-auto relative justify-end md:justify-start items-end md:w-5/12 ">
+        <div
+          className={`flex w-full ${
+            hidden ? "hidden" : ""
+          } h-72 md:h-auto relative justify-end md:justify-start items-end md:w-5/12`}
+        >
           <>
             {/* <div className="w-full md:w-10/12 h-72 md:h-96 relative"> */}
             <Image className=" " src={imageUrl} alt="" fill />

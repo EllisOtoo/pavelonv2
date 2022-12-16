@@ -76,13 +76,13 @@ const subNavItems = [
     },
     {
       title: "Capital by API",
-      url: "/identity",
+      url: "/capitalByApi",
       icon: <Balance />,
       description: "Lend money to users at scale",
     },
     {
       title: "Digital Accounts API",
-      url: "/identity",
+      url: "/digitalAccounts",
       icon: <AccountBox />,
       description: "Flexible and simple opening of accounts by users",
     },
@@ -100,24 +100,45 @@ const subNavItems = [
       icon: <Wallet />,
       description: "Grant your customers the ability to own investments",
     },
-    {
+    /*   {
       title: "Insurance as a service",
       url: "/digitalLendingApi",
       icon: <Shield />,
       description: "Embed insurance in your platform",
-    },
+    }, */
   ],
   [
     {
-      title: "Creditmall",
-      url: "/digitalLendingApi",
+      title: "Neobanks",
+      url: "/neobanks",
       icon: <Book />,
       description:
         "How Credit Mall moved from zero to hero using Pavelon’s API.",
     },
     {
-      title: "Credify",
-      url: "/digitalLendingApi",
+      title: "Commercial Fintechs",
+      url: "/commercialFintechs",
+      icon: <Book />,
+      description:
+        "How credify used Pavelon’s API to create an end to end solution for financial institution.",
+    },
+    {
+      title: "Retail Fintechs",
+      url: "/retailFintech",
+      icon: <Book />,
+      description:
+        "How credify used Pavelon’s API to create an end to end solution for financial institution.",
+    },
+    {
+      title: "Embedded Banking",
+      url: "/embeddedBanking",
+      icon: <Book />,
+      description:
+        "How credify used Pavelon’s API to create an end to end solution for financial institution.",
+    },
+    {
+      title: "Banks",
+      url: "/banks",
       icon: <Book />,
       description:
         "How credify used Pavelon’s API to create an end to end solution for financial institution.",

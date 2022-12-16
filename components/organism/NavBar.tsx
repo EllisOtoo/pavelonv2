@@ -36,8 +36,18 @@ function NavBar() {
       list={[
         { id: 0, title: "Products", subItems: ["KYC", "Two"] },
         { id: 1, title: "Solutions", subItems: ["Two", "Three"] },
-        { id: 2, title: "Case Studies", subItems: ["Credify", "GCB"] },
-        { id: 3, title: "Company", subItems: ["About Us", "Team"] },
+        {
+          id: 2,
+          title: "Use Cases",
+          subItems: [
+            "Neobanks",
+            "Commercial Fintechs",
+            "Retail Fintechs",
+            "Embedded Banking",
+            "Banks",
+          ],
+        },
+        // { id: 3, title: "Contact", subItems: ["About Us", "Team"] },
       ]}
     />
   );

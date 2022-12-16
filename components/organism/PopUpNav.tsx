@@ -50,14 +50,14 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
     return (
       <div
         ref={subNavRef}
-        className={`absolute  z-40 left-[8%] m-auto p-12 w-10/12  bg-gray-900 rounded-lg text-white`}
+        className={`absolute  md:h-auto z-40 left-[8%] m-auto p-12 w-10/12  bg-gray-900 rounded-lg text-white`}
       >
         <div ref={subNavContent}>
-          <p className="text-2xl">{subNavTitle}</p>
-          <hr className={"my-4"} />
-          <ul className="flex gap-2 flex-col md:grid md:grid-flow-col md:auto-cols-fr">
+          <p className="text-xl">{subNavTitle}</p>
+          <hr className={"my-2"} />
+          <ul className="flex max-h-[24rem] overflow-scroll gap-6 flex-col md:grid md:grid-flow-col md:auto-cols-fr">
             {menuToDisplay.map((item) => (
-              <li key={item} className="text-sky-100 flex gap-12">
+              <li key={item} className="text-sky-100 flex gap-5">
                 {item.icon}
                 <div className="cursor-pointer w-full">
                   <Link href={item.url}>
