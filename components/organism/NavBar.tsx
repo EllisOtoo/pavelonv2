@@ -107,7 +107,7 @@ function NavBar() {
               }}
               className="text-white"
             >
-              <MenuSharpIcon />
+              <MenuSharpIcon style={{ fontSize: "2rem" }} />
             </span>
           ) : (
             MenuListComponent
