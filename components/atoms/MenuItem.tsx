@@ -47,7 +47,7 @@ function MenuItem({ menu }: MenuProp) {
   return (
     <li
       // onClick={() => setSubNavTitle(menu.title)}
-      className="hover:text-sky-700 cursor-pointer flex text-2xl justify-between"
+      className="hover:text-sky-700 cursor-pointer flex sm:text-2xl md:text-xl justify-between"
       // onMouseOver={() => {
       //   // setShowSubNav(true);
       // }}

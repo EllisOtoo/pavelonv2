@@ -3,12 +3,13 @@ import ModernChart from "../../assets/BAAS/modernFin.png";
 import shield from "../../assets/BAAS/shield.png";
 import phoneImage from "../../assets/BAAS/phone.png";
 import dashboard from "../../assets/BAAS/dashboard.png";
-import { Divider, Link } from "@mui/material";
+import { Avatar, Divider, Link } from "@mui/material";
 import {
   CheckBox,
   CheckBoxRounded,
   CheckCircle,
-  Image,
+  CheckCircleOutlined,
+  Image as MUIImage,
   KeyboardArrowRightOutlined,
   Money,
 } from "@mui/icons-material";
@@ -21,6 +22,7 @@ import anime from "animejs";
 import gsap from "gsap";
 import { AnimatePresence, motion } from "framer-motion";
 import Fade from "@mui/material/Fade";
+import Image from "next/image";
 
 // import BAASSection  from "../components/organism/BoldSection";
 
@@ -193,19 +195,33 @@ const HeavyLiftingTabSwitch = () => {
         ) : (
           <div className="flex justify-between">
             <Fade in={true} timeout={1000}>
-              <div className="bg-sky-300 h-12 w-12 rounded-2xl"></div>
+              <div className="h-10 w-4 relative">
+                <Image
+                  alt=""
+                  fill
+                  // className="h-4 w-4"
+                  src={"/investmentAsAService/left.png"}
+                />
+              </div>
             </Fade>
             <Fade in={true} timeout={1000}>
-              <div className="bg-sky-300 h-12 w-12 rounded-2xl"></div>
+              <Avatar>x</Avatar>
             </Fade>
             <Fade in={true} timeout={1000}>
-              <div className="bg-sky-300 h-12 w-12 rounded-2xl"></div>
+              <Avatar>x</Avatar>
             </Fade>
             <Fade in={true} timeout={1000}>
-              <div className="bg-sky-300 h-12 w-12 rounded-2xl"></div>
+              <Avatar>x</Avatar>
             </Fade>
             <Fade in={true} timeout={1000}>
-              <div className="bg-sky-300 h-12 w-12 rounded-2xl"></div>
+              <div className="h-10 w-4 relative">
+                <Image
+                  alt=""
+                  fill
+                  // className="h-4 w-4"
+                  src={"/investmentAsAService/right.png"}
+                />
+              </div>
             </Fade>
           </div>
         )}
@@ -260,7 +276,7 @@ function FeatureSet({ features }) {
           className="flex flex-col w-full pt-4 md:pl-8 gap-2"
         >
           {/* <i className="fa-brands fa-font-awesome"></i>{" "} */}
-          <Image />
+          <MUIImage />
           <p className="text-3xl font-bold">{perFeature.featureName}</p>
           <p className="text-base"> {perFeature.subText}</p>
           <div>
