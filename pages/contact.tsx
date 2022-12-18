@@ -9,6 +9,7 @@ import InputMask from "react-input-mask";
 import styles from "./contactUs/contactForm.module.css";
 import SectionHeader from "../components/atoms/SectionHeader";
 import { IndexContext } from "./_app";
+import { useRouter } from "next/router";
 const client = axios.create({
   baseURL: "https://pavelon-server.herokuapp.com/",
   //   baseURL: "http://localhost:8000/",
@@ -16,8 +17,11 @@ const client = axios.create({
 
 export default function Contact_form() {
   const [showSuccess, setShowSuccess] = useState(false);
-
   const { setShowSubNav, setShowDropDown } = useContext(IndexContext);
+
+  const routerObject = useRouter();
+
+  console.log(routerObject.pathname);
 
   useEffect(() => {
     if (showSuccess) {
