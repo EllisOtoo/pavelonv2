@@ -113,35 +113,31 @@ const subNavItems = [
       url: "/neobanks",
       icon: <Book />,
       description:
-        "How Credit Mall moved from zero to hero using Pavelon’s API.",
+        "Reach markets in a matter of weeks rather than months or years.",
     },
     {
       title: "Commercial Fintechs",
       url: "/commercialFintechs",
       icon: <Book />,
-      description:
-        "How credify used Pavelon’s API to create an end to end solution for financial institution.",
+      description: "An efficient payment process",
     },
     {
       title: "Retail Fintechs",
       url: "/retailFintech",
       icon: <Book />,
-      description:
-        "How credify used Pavelon’s API to create an end to end solution for financial institution.",
+      description: "Open accounts, issue cards and facilitate payments.",
     },
     {
       title: "Embedded Banking",
       url: "/embeddedBanking",
       icon: <Book />,
-      description:
-        "How credify used Pavelon’s API to create an end to end solution for financial institution.",
+      description: "Seamless banking solution for any business",
     },
     {
       title: "Banks",
       url: "/banks",
       icon: <Book />,
-      description:
-        "How credify used Pavelon’s API to create an end to end solution for financial institution.",
+      description: "Increase topline earnings with new fintech clients.",
     },
   ],
   [
