@@ -60,7 +60,7 @@ function FullyIntegrated() {
                   <Image
                     src="/fullyIntegrated/middleImage_2_below.5d6e4f23 (1).png"
                     alt="creditcard"
-                    width={150}
+                    width={100}
                     height={100}
                   />
                 </div>
@@ -68,7 +68,7 @@ function FullyIntegrated() {
                   <Image
                     src="/fullyIntegrated/middleImage_2_right.1ebd745b.png"
                     alt="creditcard"
-                    width={250}
+                    width={300}
                     height={100}
                   />
                 </div>
