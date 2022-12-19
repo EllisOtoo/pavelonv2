@@ -80,19 +80,21 @@ const KYC = () => {
           and offer complete or partial loan application journeys.
         </p>
       </HeaderSubImage>
-      <div className="w-10/12 my-12 m-auto">
-        <p className="text-4xl">
-          The easiest way to offer consumer loans in your own branding
-        </p>
-        <div className="flex gap-x-4 my-12 gap-y-4 flex-col items-center md:flex-row flex-wrap">
-          {[
-            "/digitalLendingApi/credify.0464054c (1).png",
-            "/digitalLendingApi/jireh_logo.1b73473a.png",
-            "/digitalLendingApi/ay_2.a34d3f7e.png",
-            "/digitalLendingApi/vroom.3708cf99 (1).png",
-          ].map((url) => (
-            <Image width={160} height={100} src={url} alt="" />
-          ))}
+      <div className="w-12/12 my-12 m-auto">
+        <div className="w-10/12 m-auto">
+          <p className="text-4xl">
+            The easiest way to offer consumer loans in your own branding
+          </p>
+          <div className="w-10/12 flex gap-x-4 my-12 gap-y-4 md:justify-around flex-col items-center md:flex-row flex-wrap">
+            {[
+              "/digitalLendingApi/credify.0464054c (1).png",
+              "/digitalLendingApi/jireh_logo.1b73473a.png",
+              "/digitalLendingApi/ay_2.a34d3f7e.png",
+              "/digitalLendingApi/vroom.3708cf99 (1).png",
+            ].map((url) => (
+              <Image width={160} height={100} src={url} alt="" />
+            ))}
+          </div>
         </div>
       </div>
       <div>
