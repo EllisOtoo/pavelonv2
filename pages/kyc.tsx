@@ -13,6 +13,7 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, Divider } from "@mui/material";
 import PhoneLockedIcon from "@mui/icons-material/PhoneLocked";
 import CreditScoreIcon from "@mui/icons-material/CreditScore";
+import GetStarted from "../components/organism/GetStarted";
 // const styles = {
 //   slide: {
 //     padding: 15,
@@ -132,6 +133,7 @@ const KYC = () => {
           </p>
         </BasicSection>
       </div>
+      <GetStarted />
     </div>
   );
 };

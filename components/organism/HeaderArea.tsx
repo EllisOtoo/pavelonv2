@@ -59,7 +59,7 @@ function HeaderArea({ title = "Hello Section", children, imageUrl, reverse }) {
         <div className="flex flex-col w-10/12 md:w-6/12 gap-4 overflow-visible">
           <p
             style={{ width: `${matches ? "90vw" : ""}` }}
-            className={`text-5xl text-sky-900 md:text-7xl font-bold ${styles.gradientText}`}
+            className={`text-5xl py-4 text-sky-900 md:text-7xl font-bold ${styles.gradientText}`}
           >
             {title}
           </p>

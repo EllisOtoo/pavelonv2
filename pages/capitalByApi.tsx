@@ -9,6 +9,7 @@ import HeaderArea from "../components/organism/HeaderArea";
 import HeaderSubImage from "../components/organism/HeaderSubImage";
 import BaasBasicSection from "../components/organism/BaasBasicSection";
 import Image from "next/image";
+import GetStarted from "../components/organism/GetStarted";
 // import BAASSection  from "../components/organism/BoldSection";
 
 const BAAS_Section_Defaults = {
@@ -101,6 +102,7 @@ const CapitalByAPI = () => {
           },
         ]}
       />
+      <GetStarted />
     </>
   );
 };

@@ -32,8 +32,10 @@ import {
   Shield,
   Wallet,
   EmojiPeople,
+  CreditCard,
 } from "@mui/icons-material";
 import { Zoom } from "@mui/material";
+import GetStarted from "../components/organism/GetStarted";
 
 const theme = createTheme({
   status: {
@@ -69,10 +71,10 @@ const subNavItems = [
         "Conduct comprehension KYC on boarding with real time verification",
     },
     {
-      title: "Identity API",
-      url: "/identity",
-      icon: <FingerprintOutlinedIcon />,
-      description: "Authenticate users on your platform",
+      title: "Digital Lending API",
+      url: "/digitalLendingApi",
+      icon: <CreditCard />,
+      description: "The Next-Gen Platform For Automated Digital Lending.      ",
     },
     {
       title: "Capital by API",
@@ -171,6 +173,12 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <Head>
+        <script
+          src="https://kit.fontawesome.com/93a10edc31.js"
+          crossorigin="anonymous"
+        ></script>
+      </Head>
       <ThemeProvider theme={theme}>
         <IndexContext.Provider
           value={{
@@ -195,6 +203,7 @@ export default function App({ Component, pageProps }: AppProps) {
             }
           `}</style>
           <Component {...pageProps} setShowSubNav={setShowSubNav} />
+          {/* <GetStarted /> */}
           <Footer />
         </IndexContext.Provider>
       </ThemeProvider>

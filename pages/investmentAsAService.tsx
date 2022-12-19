@@ -23,6 +23,7 @@ import gsap from "gsap";
 import { AnimatePresence, motion } from "framer-motion";
 import Fade from "@mui/material/Fade";
 import Image from "next/image";
+import GetStarted from "../components/organism/GetStarted";
 
 // import BAASSection  from "../components/organism/BoldSection";
 
@@ -181,21 +182,9 @@ const HeavyLiftingTabSwitch = () => {
       </div>
       <div className="w-10/12 md:w-6/12 m-auto my-12">
         {switched ? (
-          <div className="flex justify-between">
+          <div className="flex flex-col items-center gap-24 md:flex-row m-auto md:w-8/12 justify-around">
             <Fade in={true} timeout={1000}>
-              <div className="bg-sky-600 h-12 w-12 rounded-2xl"></div>
-            </Fade>{" "}
-            <Fade in={true} timeout={1000}>
-              <div className="bg-sky-600 h-12 w-12 rounded-2xl"></div>
-            </Fade>{" "}
-            <Fade in={true} timeout={1000}>
-              <div className="bg-sky-600 h-12 w-12 rounded-2xl"></div>
-            </Fade>
-          </div>
-        ) : (
-          <div className="flex justify-between">
-            <Fade in={true} timeout={1000}>
-              <div className="h-10 w-4 relative">
+              <div className="h-16 w-8 relative">
                 <Image
                   alt=""
                   fill
@@ -205,16 +194,72 @@ const HeavyLiftingTabSwitch = () => {
               </div>
             </Fade>
             <Fade in={true} timeout={1000}>
-              <Avatar>x</Avatar>
+              <div className="h-8 w-32 relative">
+                <Fade in={true} timeout={1000}>
+                  <div className="flex flex-col items-center">
+                    <Avatar className="bg-sky-600">x</Avatar>
+                    <span>Pavelon</span>
+                  </div>
+                </Fade>
+              </div>
+            </Fade>{" "}
+            <Fade in={true} timeout={1000}>
+              <div className="h-20 w-16 relative">
+                <Image
+                  alt=""
+                  fill
+                  // className="h-4 w-4"
+                  src={"/investmentAsAService/right.png"}
+                />
+              </div>
+            </Fade>
+          </div>
+        ) : (
+          <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
+            <Fade in={true} timeout={1000}>
+              <div className="h-16 w-8 relative">
+                <Image
+                  alt=""
+                  fill
+                  // className="h-4 w-4"
+                  src={"/investmentAsAService/left.png"}
+                />
+              </div>
             </Fade>
             <Fade in={true} timeout={1000}>
-              <Avatar>x</Avatar>
+              <div className="flex flex-col items-center">
+                <Avatar className="bg-red-500">x</Avatar>
+                <span>
+                  Regulatory <br /> Overhead
+                </span>
+              </div>
             </Fade>
             <Fade in={true} timeout={1000}>
-              <Avatar>x</Avatar>
+              <div className="flex flex-col items-center">
+                <Avatar className="bg-red-500">x</Avatar>
+                <span className="text-center">
+                  Compliance <br /> Management{" "}
+                </span>
+              </div>
             </Fade>
             <Fade in={true} timeout={1000}>
-              <div className="h-10 w-4 relative">
+              <div className="flex flex-col items-center">
+                <Avatar className="bg-red-500">x</Avatar>
+                <span className="text-center">
+                  Middle Office <br /> Operations{" "}
+                </span>
+              </div>
+            </Fade>
+            <Fade in={true} timeout={1000}>
+              <div className="flex flex-col items-center">
+                <Avatar className="bg-red-500">x</Avatar>
+                <span className="text-center">
+                  BackOffice <br /> Operations{" "}
+                </span>
+              </div>
+            </Fade>
+            <Fade in={true} timeout={1000}>
+              <div className="h-20 w-16 relative">
                 <Image
                   alt=""
                   fill
@@ -263,6 +308,7 @@ const HeavyLiftingTabSwitch = () => {
           </li>
         </ul>
       </BaasBasicSection>
+      <GetStarted />
     </>
   );
 };
