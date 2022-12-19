@@ -132,7 +132,7 @@ const KYC = () => {
       </div>
       <div>
         <BasicSection
-          imageUrl={"/digitalLendingApi/automation.216df2e1.jpg"}
+          imageUrl={""}
           title={"Automate, Control And Optimize Complex Lending Decisions"}
         >
           <p>
