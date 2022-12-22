@@ -55,7 +55,7 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
         <div ref={subNavContent}>
           <p className="text-xl">{subNavTitle}</p>
           <hr className={"my-2"} />
-          <ul className="flex max-h-[24rem] overflow-scroll gap-6 flex-col md:grid md:grid-flow-col md:auto-cols-fr">
+          <ul className="flex max-h-[24rem] overflow-scroll md:overflow-visible gap-6 flex-col md:grid md:grid-flow-col md:auto-cols-fr">
             {menuToDisplay.map((item) => (
               <li key={item} className="text-sky-100 flex gap-5">
                 {item.icon}
