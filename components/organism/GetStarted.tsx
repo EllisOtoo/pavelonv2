@@ -26,7 +26,7 @@ function GetStarted() {
   return (
     <div className="w-full bg-gray-200 py-24">
       <div className="w-10/12 flex flex-col md:flex-row m-auto">
-        <div className="md:w-6/12">
+        <div className="md:w-6/12 flex flex-col justify-between">
           <p>BUILDING CREDIT PRODUCTS HAS NEVER BEEN EASIER</p>
           <p className="text-3xl font-bold">Ready to get Started?</p>
           <p>

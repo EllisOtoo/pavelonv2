@@ -80,7 +80,8 @@ function HeaderArea({ title = "Hello Section", children, imageUrl, reverse }) {
               <div className="w-full md:w-4/12 h-72 md:h-96 relative">
                 <Image
                   className=" "
-                  src={"/landingPageMobile.png"}
+                  // src={"/landingPageMobile.png"}
+                  src={""}
                   alt=""
                   fill
                 />
@@ -90,7 +91,8 @@ function HeaderArea({ title = "Hello Section", children, imageUrl, reverse }) {
                 ref={cardRef}
                 className="w-full h-24 md:h-44 md:w-6/12 relative"
               >
-                <Image src={"/creditCard.png"} alt="" fill />
+                {/* <Image src={"/creditCard.png"} alt="" fill /> */}
+                <Image src={""} alt="" fill />
               </div>
             </>
           )}

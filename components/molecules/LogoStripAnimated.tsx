@@ -29,6 +29,8 @@ function LogoStripAnimated({ imageUrls, headertitle }) {
 
         <div className="w-full my-4 ">
           <Carousel
+            speed={200}
+            className=""
             defaultControlsConfig={{
               nextButtonOnClick: (event: React.MouseEvent) => {},
               pagingDotsStyle: { display: "none" },
@@ -53,7 +55,7 @@ function LogoStripAnimated({ imageUrls, headertitle }) {
               src={"/logostrip/credify.png"}
             />
             <Image
-              width={200}
+              width={170}
               height={50}
               alt=""
               src={"/logostrip/yango.f54ab341.png"}

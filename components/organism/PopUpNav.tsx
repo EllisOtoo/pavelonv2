@@ -51,18 +51,18 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
       <div
         ref={subNavRef}
         // className={`absolute  md:h-auto z-40 left-[8%] m-auto p-12 w-10/12  bg-gray-900 rounded-lg text-white`}
-        className={`absolute md:h-auto z-40 right-[8%] m-auto p-12 w-4/12  bg-sky-900 text-white`}
+        className={`absolute md:h-auto z-40 right-[8%] m-auto rounded-lg p-12 w-4/12  bg-gray-100`}
       >
         <div ref={subNavContent}>
           {/* <ul className="flex max-h-[24rem] overflow-scroll md:overflow-visible gap-6 flex-col md:grid md:grid-flow-col md:auto-cols-fr"> */}
-          <ul className="flex max-h-[24rem] overflow-scroll md:overflow-visible gap-6 flex-col md:grid md:grid-col-1 md:auto-cols-fr">
+          <ul className="flex max-h-[28rem] overflow-scroll md:overflow-visible gap-6 flex-col md:grid md:grid-col-1 md:auto-cols-fr">
             {menuToDisplay.map((item) => (
-              <li key={item} className="text-sky-100 flex gap-5">
+              <li key={item} className=" flex gap-5">
                 {item.icon}
                 <div className="cursor-pointer w-full">
                   <Link href={item.url}>
                     <span
-                      className="font-bold text-xl"
+                      className="font-bold text-xl text-sky-800"
                       onClick={() => {
                         setShowDropDown(false);
                         setShowSubNav(false);
