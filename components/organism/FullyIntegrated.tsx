@@ -13,12 +13,12 @@ function FullyIntegrated() {
   useEffect(() => {}, []);
 
   return (
-    <div className="w-full md:flex md:flex-col md:justify-center bg-gray-100 py-12 md:h-screen md:py-54">
+    <div className="w-full md:flex md:flex-col md:justify-center bg-gray-100 py-12 md:min-h-screen md:py-48">
       <div className="w-10/12 m-auto">
         {/* BLOCKS STARTS HERE */}
 
         <div className="flex text-base flex-col md:flex-row md:flex-wrap gap-8   my-6">
-          <div className="flex flex-col md:flex-row md:w-11/12  justify-end">
+          <div className="flex flex-col md:flex-row md:w-11/12 justify-end">
             <div className="w-full md:w-6/12 flex flex-col gap-y-12">
               <SectionHeader
                 title={
