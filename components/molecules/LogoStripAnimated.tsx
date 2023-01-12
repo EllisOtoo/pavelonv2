@@ -15,33 +15,6 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import Carousel from "nuka-carousel/lib/carousel";
 
-const styles = {
-  root: {
-    // padding: "0 30px", /* Show some extra logo on side */
-    padding: "0 0px",
-  },
-  slideContainer: {
-    padding: "0 0px",
-  },
-  slide: {
-    padding: 15,
-    minHeight: 100,
-    color: "#fff",
-  },
-  slide1: {
-    // background: "#FEA900",
-  },
-  slide2: {
-    // background: "#B3DC4A",
-  },
-  slide3: {
-    // background: "#6AC0FF",
-  },
-  slide4: {
-    // backgroundColor: "silver",
-  },
-};
-
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 function LogoStripAnimated({ imageUrls, headertitle }) {
@@ -49,7 +22,6 @@ function LogoStripAnimated({ imageUrls, headertitle }) {
 
   return (
     <>
-      {" "}
       <div className="my-12 flex flex-col md:flex-row items-center justify-between w-10/12 m-auto">
         <p className="text-4xl w-12/12 md:w-6/12">
           Powering businesses, {matches ? <br /> : ""} small and large

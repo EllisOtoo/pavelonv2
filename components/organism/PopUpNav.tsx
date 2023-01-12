@@ -51,7 +51,7 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
       <div
         ref={subNavRef}
         // className={`absolute  md:h-auto z-40 left-[8%] m-auto p-12 w-10/12  bg-gray-900 rounded-lg text-white`}
-        className={`absolute md:h-auto z-40 right-[8%] m-auto p-12 w-4/12  bg-sky-900 rounded-lg text-white`}
+        className={`absolute md:h-auto z-40 right-[8%] m-auto p-12 w-4/12  bg-sky-900 text-white`}
       >
         <div ref={subNavContent}>
           {/* <ul className="flex max-h-[24rem] overflow-scroll md:overflow-visible gap-6 flex-col md:grid md:grid-flow-col md:auto-cols-fr"> */}
