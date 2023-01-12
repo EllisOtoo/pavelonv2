@@ -77,14 +77,16 @@ function HeaderArea({ title = "Hello Section", children, imageUrl, reverse }) {
             </div>
           ) : (
             <>
-              <div className="w-full md:w-4/12 h-72 md:h-96 relative">
-                <Image
-                  className=" "
-                  // src={"/landingPageMobile.png"}
-                  src={""}
-                  alt=""
-                  fill
-                />
+              <Image
+                className=" "
+                src={"/hero.a7d1a183.png"}
+                alt=""
+                width={700}
+                height={200}
+              />
+
+              {/*  <div className="w-full md:w-4/12 h-72 md:h-96 relative">
+                <Image className=" " src={"/hero.a7d1a183.png"} alt="" fill />
               </div>
               <div
                 style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
@@ -92,8 +94,8 @@ function HeaderArea({ title = "Hello Section", children, imageUrl, reverse }) {
                 className="w-full h-24 md:h-44 md:w-6/12 relative"
               >
                 {/* <Image src={"/creditCard.png"} alt="" fill /> */}
-                <Image src={""} alt="" fill />
-              </div>
+              {/* <Image src={""} alt="" fill /> */}
+              {/* </div> */}
             </>
           )}
         </div>
