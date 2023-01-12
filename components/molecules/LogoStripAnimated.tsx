@@ -22,11 +22,10 @@ function LogoStripAnimated({ imageUrls, headertitle }) {
 
   return (
     <>
-      <div className="my-12 flex flex-col md:flex-row items-center justify-between w-10/12 m-auto">
-        <p className="text-4xl w-12/12 md:w-6/12">
+      <div className="my-12 flex flex-col  justify-between w-10/12 m-auto">
+        <p className="text-4xl w-12/12">
           Powering businesses, {matches ? <br /> : ""} small and large
         </p>
-
         <div className="w-full my-4 ">
           <Carousel
             speed={200}
