@@ -39,7 +39,6 @@ function LogoStripAnimated({ imageUrls, headertitle }) {
             slidesToShow={4}
             autoplay
             wrapAround
-            autoplayReverse
           >
             <Image
               width={200}
