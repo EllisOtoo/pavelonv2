@@ -57,12 +57,7 @@ function MenuItem({ menu }: MenuProp) {
 
       onMouseLeave={collapse}
     >
-      {menu.title}{" "}
-      {matches ? (
-        <span ref={spanIconRef}>+</span>
-      ) : (
-        <KeyboardArrowDownOutlinedIcon />
-      )}
+      {menu.title} {matches ? <span ref={spanIconRef}>+</span> : null}
     </li>
   );
 }

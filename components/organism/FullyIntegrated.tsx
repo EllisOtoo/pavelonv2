@@ -13,20 +13,12 @@ function FullyIntegrated() {
   useEffect(() => {}, []);
 
   return (
-    <div className="w-full bg-gray-100 py-12">
+    <div className="w-full md:flex md:flex-col md:justify-center bg-gray-100 py-12 md:h-screen">
       <div className="w-10/12 m-auto">
         {/* BLOCKS STARTS HERE */}
 
-        <div className="flex text-base flex-col md:flex-row md:flex-wrap gap-8  my-6">
-          {/*  */}
-
+        <div className="flex text-base flex-col md:flex-row md:flex-wrap gap-8   my-6">
           <div className="flex flex-col md:flex-row md:w-11/12  justify-end">
-            {/* <div className="w-full">
-              <Link href="/kyc" className="w-full">
-                <Button title={"See More"} />
-              </Link>
-            </div> */}
-
             <div className="w-full md:w-6/12 flex flex-col gap-y-12">
               <SectionHeader
                 title={
@@ -54,13 +46,13 @@ function FullyIntegrated() {
                     src="/fullyIntegrated/middleImage_2_top.7013319b.png"
                     alt="creditcard"
                     width={300}
-                    height={100}
+                    height={200}
                   />
 
                   <Image
                     src="/fullyIntegrated/middleImage_2_below.5d6e4f23 (1).png"
                     alt="creditcard"
-                    width={100}
+                    width={200}
                     height={100}
                   />
                 </div>
@@ -68,7 +60,7 @@ function FullyIntegrated() {
                   <Image
                     src="/fullyIntegrated/middleImage_2_right.1ebd745b.png"
                     alt="creditcard"
-                    width={300}
+                    width={350}
                     height={100}
                   />
                 </div>

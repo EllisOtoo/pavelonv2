@@ -11,20 +11,20 @@ const Footer = () => {
           <p>
             Copyright © 2022 Codat Limited. <br /> All rights reserved.{" "}
           </p>
-          <Divider
+          {/* <Divider
             light={true}
             orientation="vertical"
             className="text-white bg-sky-200"
-          />
+          /> */}
           <div className="flex flex-col md:flex-row gap-12 my-12 md:my-0">
             <div>
               <p className="text-2xl my-2 md:my-0">Solutions</p>
               <ul className="list-disc ml-5">
                 <Link href={"/baas"}>
-                  <li className="underline">BAAS</li>
+                  <li className="">BAAS</li>
                 </Link>
                 <Link href={"/investmentAsAService"}>
-                  <li className="underline">Investment As a Service</li>
+                  <li className="">Investment As a Service</li>
                 </Link>
               </ul>
             </div>
@@ -32,19 +32,19 @@ const Footer = () => {
               <p className="text-2xl my-2 md:my-0">Products</p>
               <ul className="list-disc ml-5">
                 <Link href={"/kyc"}>
-                  <li className="underline">KYC</li>
+                  <li className="">KYC</li>
                 </Link>
                 <Link href={"/identity"}>
                   {" "}
-                  <li className="underline">Identity API</li>
+                  <li className="">Identity API</li>
                 </Link>
                 <Link href={"/capitalByApu"}>
                   {" "}
-                  <li className="underline">Capital By API</li>
+                  <li className="">Capital By API</li>
                 </Link>
                 <Link href={"/digitalAccounts"}>
                   {" "}
-                  <li className="underline">Digital Accounts API</li>
+                  <li className="">Digital Accounts API</li>
                 </Link>
               </ul>
             </div>
@@ -53,23 +53,23 @@ const Footer = () => {
               <ul className="list-disc ml-5">
                 <Link href={"/neobanks"}>
                   {" "}
-                  <li className="underline">NeoBanks</li>
+                  <li className="">NeoBanks</li>
                 </Link>
                 <Link href={"/commericialFintechs"}>
                   {" "}
-                  <li className="underline">Commercial Fintechs</li>
+                  <li className="">Commercial Fintechs</li>
                 </Link>
                 <Link href={"/retailFintechs"}>
                   {" "}
-                  <li className="underline">Retails Fintechs</li>
+                  <li className="">Retails Fintechs</li>
                 </Link>
                 <Link href={"/embeddedBanking"}>
                   {" "}
-                  <li className="underline">Embedded Banking</li>
+                  <li className="">Embedded Banking</li>
                 </Link>
                 <Link href={"/banks"}>
                   {" "}
-                  <li className="underline">Banks</li>
+                  <li className="">Banks</li>
                 </Link>
               </ul>
             </div>

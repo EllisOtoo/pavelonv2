@@ -47,7 +47,7 @@ function BuiltInMinutes() {
   };
 
   return (
-    <div className="flex flex-col bg-gray-900 text-white w-full py-24">
+    <div className="flex flex-col bg-gray-900 text-white w-full py-24  md:flex md:flex-col md:justify-center md:h-screen">
       <div className="flex flex-col md:flex-row w-10/12 md:justify-between m-auto gap-y-12 md:flex-wrap">
         <div className="md:w-4/12">
           <p>BUILT DEVELOPERS</p>

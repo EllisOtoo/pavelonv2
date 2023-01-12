@@ -12,9 +12,9 @@ const MenuList = React.forwardRef(({ list, underline }: MenuList, ref) => {
   return (
     <ul
       ref={ref}
-      className={`flex flex-col gap-2 md:gap-4 ${
+      className={`flex flex-col gap-2 md:gap-12 ${
         underline ? "divide-y" : ""
-      } md:flex-row md:gap-12 text-white ${styles.fadeIn}`}
+      } md:flex-row md:gap-12${styles.fadeIn}`}
     >
       {list.map((menu) => (
         <MenuItem key={menu.id} menu={menu} />

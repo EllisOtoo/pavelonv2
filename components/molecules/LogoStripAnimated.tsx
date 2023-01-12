@@ -13,6 +13,7 @@ import {
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import "pure-react-carousel/dist/react-carousel.es.css";
+import Carousel from "nuka-carousel/lib/carousel";
 
 const styles = {
   root: {
@@ -54,44 +55,44 @@ function LogoStripAnimated({ imageUrls, headertitle }) {
           Powering businesses, {matches ? <br /> : ""} small and large
         </p>
 
-        <div className="w-full my-4 md:w-3/12">
-          <AutoPlaySwipeableViews
-            style={styles.root}
-            slideStyle={styles.slideContainer}
+        <div className="w-full my-4 ">
+          <Carousel
+            defaultControlsConfig={{
+              nextButtonOnClick: (event: React.MouseEvent) => {},
+              pagingDotsStyle: { display: "none" },
+              nextButtonStyle: { display: "none" },
+              prevButtonStyle: { display: "none" },
+            }}
+            slidesToShow={4}
+            autoplay
+            wrapAround
+            autoplayReverse
           >
-            <div style={Object.assign({}, styles.slide, styles.slide2)}>
-              <Image
-                width={200}
-                height={50}
-                alt=""
-                src={"/logostrip/creditmall.png"}
-              />
-            </div>
-            <div style={Object.assign({}, styles.slide, styles.slide1)}>
-              <Image
-                width={200}
-                height={50}
-                alt=""
-                src={"/logostrip/credify.png"}
-              />
-            </div>
-            <div style={Object.assign({}, styles.slide, styles.slide3)}>
-              <Image
-                width={200}
-                height={50}
-                alt=""
-                src={"/logostrip/yango.f54ab341.png"}
-              />
-            </div>
-            <div style={Object.assign({}, styles.slide, styles.slide4)}>
-              <Image
-                width={200}
-                height={50}
-                alt=""
-                src={"/logostrip/gcb_logo.cb4c2a8d.png"}
-              />
-            </div>
-          </AutoPlaySwipeableViews>
+            <Image
+              width={200}
+              height={50}
+              alt=""
+              src={"/logostrip/creditmall.png"}
+            />
+            <Image
+              width={200}
+              height={50}
+              alt=""
+              src={"/logostrip/credify.png"}
+            />
+            <Image
+              width={200}
+              height={50}
+              alt=""
+              src={"/logostrip/yango.f54ab341.png"}
+            />
+            <Image
+              width={200}
+              height={50}
+              alt=""
+              src={"/logostrip/gcb_logo.cb4c2a8d.png"}
+            />
+          </Carousel>
         </div>
       </div>
       <div></div>

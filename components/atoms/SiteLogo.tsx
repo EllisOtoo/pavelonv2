@@ -21,7 +21,8 @@ function SiteLogo({ dimensions = null }) {
         }}
         href={"/"}
       >
-        <Image fill src="/PavelonLogoWhite.png" alt="Pavelon Logo" />
+        {/* <Image fill src="/PavelonLogoWhite.png" alt="Pavelon Logo" /> */}
+        <Image fill src="/PavelonLogo.png" alt="Pavelon Logo" />
       </Link>
     </div>
   );
