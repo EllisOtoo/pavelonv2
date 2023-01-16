@@ -17,7 +17,7 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
   const subNavRef = useRef(null);
   const subNavContent = useRef(null);
 
-  const { subNavTitle, showSubNav, setShowSubNav, setShowDropDown } =
+  const { subNavTitle, showSubNav, setShowSubNav, setShowDropDown, matches } =
     useContext(IndexContext);
 
   useLayoutEffect(() => {
@@ -35,6 +35,7 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
   };
 
   useEffect(() => {
+    // console.log("matches", matches);
     document.addEventListener("click", hideElement);
     anime({
       targets: subNavRef.current,
@@ -51,7 +52,9 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
       <div
         ref={subNavRef}
         // className={`absolute  md:h-auto z-40 left-[8%] m-auto p-12 w-10/12  bg-gray-900 rounded-lg text-white`}
-        className={`absolute md:h-auto z-40 right-[8%] m-auto rounded-lg p-12 w-4/12  bg-gray-100`}
+        className={`absolute md:h-auto z-40 m-auto rounded-lg p-12 ${
+          matches ? "w-full" : "w-4/12  right-[8%]"
+        }   bg-gray-100`}
       >
         <div ref={subNavContent}>
           {/* <ul className="flex max-h-[24rem] overflow-scroll md:overflow-visible gap-6 flex-col md:grid md:grid-flow-col md:auto-cols-fr"> */}
