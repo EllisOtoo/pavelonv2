@@ -28,7 +28,7 @@ function LogoStripAnimated({ imageUrls, headertitle }) {
         </p>
         <div className="w-full my-4 ">
           <Carousel
-            speed={200}
+            speed={100}
             className=""
             defaultControlsConfig={{
               nextButtonOnClick: (event: React.MouseEvent) => {},

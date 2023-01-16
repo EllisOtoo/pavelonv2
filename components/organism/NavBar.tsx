@@ -105,7 +105,7 @@ function NavBar() {
                 }
                 if (showSubNav) setShowSubNav(false);
               }}
-              className="text-white"
+              className=""
             >
               <MenuSharpIcon style={{ fontSize: "2rem" }} />
             </span>
