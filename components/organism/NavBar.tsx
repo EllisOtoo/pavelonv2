@@ -83,7 +83,7 @@ function NavBar() {
         }`,
         transition: "height 0.3s",
       }}
-      className="bg-sky-200 py-4"
+      className="bg-sky-100 py-4"
     >
       <div
         onMouseOver={(e) => {

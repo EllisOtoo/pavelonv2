@@ -54,7 +54,7 @@ function HeaderArea({ title = "Hello Section", children, imageUrl, reverse }) {
     >
       <div className="w-10/12 m-auto h-2 left-[8%] absolute top-0"></div>
       <div
-        className={`w-10/12 m-auto flex flex-col gap-y-8 justify-between  md:flex-row md:gap-32 `}
+        className={`w-10/12 m-auto flex flex-col gap-y-8 justify-between  md:flex-row md:gap-12 md:w-10/12 `}
       >
         <div className="flex flex-col w-10/12 md:w-6/12 gap-4 overflow-visible">
           <p
@@ -70,7 +70,7 @@ function HeaderArea({ title = "Hello Section", children, imageUrl, reverse }) {
             </Link>
           </div>
         </div>
-        <div className="flex w-full justify-end md:justify-start items-end md:w-6/12">
+        <div className="flex w-full justify-end md:justify-start items-end md:w-8/12 ">
           {imageUrl ? (
             <div className="w-10/12 md:w-5/12 h-96 md:h-96 relative">
               <Image fill className=" " src={imageUrl} alt="" />
@@ -79,23 +79,11 @@ function HeaderArea({ title = "Hello Section", children, imageUrl, reverse }) {
             <>
               <Image
                 className=" "
-                src={"/hero.a7d1a183.png"}
+                src={"/her.png"}
                 alt=""
-                width={700}
+                width={900}
                 height={200}
               />
-
-              {/*  <div className="w-full md:w-4/12 h-72 md:h-96 relative">
-                <Image className=" " src={"/hero.a7d1a183.png"} alt="" fill />
-              </div>
-              <div
-                style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
-                ref={cardRef}
-                className="w-full h-24 md:h-44 md:w-6/12 relative"
-              >
-                {/* <Image src={"/creditCard.png"} alt="" fill /> */}
-              {/* <Image src={""} alt="" fill /> */}
-              {/* </div> */}
             </>
           )}
         </div>
