@@ -38,7 +38,11 @@ const CapitalByAPI = () => {
         </p>
       </HeaderSubImage>
 
-      <BaasBasicSection title={"How it Works"}>
+      <BaasBasicSection
+        setWH={[150, 150]}
+        imageUrl={"/motherboard.png"}
+        title={"How it Works"}
+      >
         <p>
           Pavelon provides platforms with an end-to-end lending API that enables
           you to offer access to fast and flexible financing to help your
@@ -53,7 +57,12 @@ const CapitalByAPI = () => {
           <li>Transparent pricing</li>
         </ul>
       </BaasBasicSection>
-      <BaasBasicSection title={"Become a source of capital for your customers"}>
+
+      <BaasBasicSection
+        imageUrl={"/cash-in-hand.png"}
+        setWH={[150, 150]}
+        title={"Become a source of capital for your customers"}
+      >
         <p>
           Pavelon provides platforms with an end-to-end lending API that enables
           you to offer access to fast and flexible financing to help your
@@ -61,6 +70,9 @@ const CapitalByAPI = () => {
         </p>
       </BaasBasicSection>
       <BaasBasicSection
+        setWH={[150, 150]}
+        imageUrl={"/capital-01.png"}
+        // imageUrl={"/credit.png"}
         title={"Building credit products has never been easier"}
       >
         <p>
@@ -69,6 +81,8 @@ const CapitalByAPI = () => {
         </p>
       </BaasBasicSection>
       <BaasBasicSection
+        setWH={[150, 150]}
+        imageUrl={"/online-store.png"}
         title={"Get to market faster, no fintech experience required"}
       >
         <p>

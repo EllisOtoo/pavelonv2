@@ -4,12 +4,17 @@ import shield from "../../assets/BAAS/shield.png";
 import phoneImage from "../../assets/BAAS/phone.png";
 import dashboard from "../../assets/BAAS/dashboard.png";
 import { Link } from "@mui/material";
-import { Image, KeyboardArrowRightOutlined, Money } from "@mui/icons-material";
+import {
+  Image as MUIImage,
+  KeyboardArrowRightOutlined,
+  Money,
+} from "@mui/icons-material";
 import HeaderArea from "../components/organism/HeaderArea";
 import HeaderSubImage from "../components/organism/HeaderSubImage";
 import BaasBasicSection from "../components/organism/BaasBasicSection";
 import GetStarted from "../components/organism/GetStarted";
 // import BAASSection  from "../components/organism/BoldSection";
+import Image from "next/image";
 
 const BAAS_Section_Defaults = {
   altColor: "#f7fafe",
@@ -92,7 +97,10 @@ const BAAS = () => {
         </div>
       </div>
 
-      <BaasBasicSection title={"Pavelon Starter Apps"}>
+      <BaasBasicSection
+        imageUrl={"/baas_01.png"}
+        title={"Pavelon Starter Apps"}
+      >
         <ul>
           <li>
             Build beautiful, user-friendly mobile banking experiences quickly
@@ -109,7 +117,11 @@ const BAAS = () => {
           </li>
         </ul>
       </BaasBasicSection>
-      <BaasBasicSection title={"Pavelon Cases"}>
+      <BaasBasicSection
+        setWH={[400, 400]}
+        imageUrl={"/baas_02.png"}
+        title={"Pavelon Cases"}
+      >
         <p>Easy, seamless workflow management</p>
         <ul>
           <li>
@@ -127,6 +139,23 @@ const BAAS = () => {
           <li>A full history is saved for each case, making audits easier</li>
         </ul>
       </BaasBasicSection>
+      <div className="flex w-10/12 m-auto py-12">
+        <div className="flex w-4/12 items-start gap-x-4">
+          <Image src="/guard.png" alt="" width={50} height={50} />
+          <p className="font-black text-2xl">A Secure BAAS platform</p>
+        </div>
+        <div className="w-8/12">
+          <p>
+            Data security and integrity are extremely important to our clients,
+            and Pavelon is aware of this. SOC 2, Type II attestation and PCI-DSS
+            certification, both obtained in Q4 2021, are among the independent
+            audits that reputable outside partners have conducted on Pavelon.
+            Pavelon is still committed to these areas of independent validations
+            and continues to invest in certifications, attestations, and
+            validations.
+          </p>
+        </div>
+      </div>
       <GetStarted />
     </>
   );
@@ -141,7 +170,7 @@ function FeatureSet({ features }) {
           className="flex flex-col w-full pt-4 md:pl-8 gap-2"
         >
           {/* <i className="fa-brands fa-font-awesome"></i>{" "} */}
-          <Image />
+          <MUIImage />
           <p className="text-3xl font-bold">{perFeature.featureName}</p>
           <p className="text-base"> {perFeature.subText}</p>
           <div>

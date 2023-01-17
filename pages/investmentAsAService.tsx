@@ -271,7 +271,11 @@ const HeavyLiftingTabSwitch = () => {
           </div>
         )}
       </div>
-      <BaasBasicSection title={"Turn Key Experiences"}>
+      <BaasBasicSection
+        imageUrl={"/turnkey_01.png"}
+        title={"Turn Key Experiences"}
+        setWH={[400, 500]}
+      >
         <p>
           Support your customers’ investment journeys without building your UI
           from scratch. We offer fully customizable front-end experiences that
@@ -290,7 +294,11 @@ const HeavyLiftingTabSwitch = () => {
           </li>
         </ul>
       </BaasBasicSection>
-      <BaasBasicSection title={"Developer first APIs"}>
+      <BaasBasicSection
+        setWH={[400, 500]}
+        imageUrl={"/turnkey_02.png"}
+        title={"Developer first APIs"}
+      >
         <p>
           For even more control over the user experience, implement using our
           API. Implementation is quick and simple thanks to our intuitive APIs

@@ -99,7 +99,7 @@ const KYC = () => {
       </div>
       <div>
         <BasicSection
-          imageUrl={"/IdentityApi/Screenshot 2022-12-11 at 12.45.59 PM.png"}
+          imageUrl={"/loans.png"}
           title={
             "Originate Loans Your Way With The Most Flexible LOS Ever Built"
           }
@@ -134,7 +134,7 @@ const KYC = () => {
       </div>
       <div>
         <BasicSection
-          imageUrl={""}
+          imageUrl={"/automation-2.png"}
           title={"Automate, Control And Optimize Complex Lending Decisions"}
         >
           <p>
@@ -171,7 +171,7 @@ const KYC = () => {
       </div>
       <div>
         <BasicSection
-          imageUrl={""}
+          imageUrl={"/digital.png"}
           title={
             "Launch A Best-In-Class Digital Channel And Fund More Loans, Faster            "
           }

@@ -15,6 +15,7 @@ import PhoneLockedIcon from "@mui/icons-material/PhoneLocked";
 import CreditScoreIcon from "@mui/icons-material/CreditScore";
 import GetStarted from "../components/organism/GetStarted";
 import HeaderSubImage from "../components/organism/HeaderSubImage";
+import BaasBasicSection from "../components/organism/BaasBasicSection";
 // const styles = {
 //   slide: {
 //     padding: 15,
@@ -92,8 +93,9 @@ const KYC = () => {
         </p>
       </HeaderArea> */}
       <div>
-        <BasicSection
-          imageUrl={"/IdentityApi/Screenshot 2022-12-11 at 12.45.59 PM.png"}
+        <BaasBasicSection
+          setWH={[200, 100]}
+          imageUrl={"/verification.png"}
           title={"Phone Number Verification"}
         >
           <p>
@@ -106,9 +108,14 @@ const KYC = () => {
             checks the user’s input matches the code. If they match, we register
             the phone number as approved.
           </p>
-        </BasicSection>
+        </BaasBasicSection>
         <Divider className="w-10/12 m-auto my-12" />
-        <BasicSection title={"ID Verification"}>
+        <BaasBasicSection
+          setWH={[200, 100]}
+          reverse
+          imageUrl={"/id.png"}
+          title={"ID Verification"}
+        >
           <p>
             Validate users by allowing users to upload a picture of their
             national ID. Details and the photograph on the ID must match that of
@@ -116,8 +123,12 @@ const KYC = () => {
             the new user to prevent fraudsters and impersonators from gaining
             access to the platform.
           </p>
-        </BasicSection>
-        <BasicSection title={"Consent Verification"}>
+        </BaasBasicSection>
+        <BaasBasicSection
+          imageUrl={"/consent.png"}
+          setWH={[200, 100]}
+          title={"Consent Verification"}
+        >
           <p>
             An innovative way to get the customer’s approval. Verify user’s
             consent in real-time with consent verification. Authenticate
@@ -130,8 +141,13 @@ const KYC = () => {
             anti-spoofing measures and advanced AI technology, Pavelon verifies
             and authenticates the user’s identity and consent note in real-time.
           </p>
-        </BasicSection>
-        <BasicSection title={"Address Verification"}>
+        </BaasBasicSection>
+        <BaasBasicSection
+          reverse
+          setWH={[200, 100]}
+          imageUrl={"/address_2.png"}
+          title={"Address Verification"}
+        >
           <p>
             An innovative way to get the customer’s approval. Verify user’s
             consent in real-time with consent verification. Authenticate
@@ -144,7 +160,7 @@ const KYC = () => {
             anti-spoofing measures and advanced AI technology, Pavelon verifies
             and authenticates the user’s identity and consent note in real-time.
           </p>
-        </BasicSection>
+        </BaasBasicSection>
       </div>
       <GetStarted />
     </div>
