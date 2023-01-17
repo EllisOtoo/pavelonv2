@@ -14,6 +14,7 @@ import { Button, CardActionArea, Divider } from "@mui/material";
 import PhoneLockedIcon from "@mui/icons-material/PhoneLocked";
 import CreditScoreIcon from "@mui/icons-material/CreditScore";
 import GetStarted from "../components/organism/GetStarted";
+import HeaderSubImage from "../components/organism/HeaderSubImage";
 // const styles = {
 //   slide: {
 //     padding: 15,
@@ -68,7 +69,19 @@ const SwipeableImageGallery = () => {
 const KYC = () => {
   return (
     <div>
-      <HeaderArea
+      <HeaderSubImage
+        noButton
+        reverse
+        title="Easiest way to Verify and Onboard users"
+        imageUrl="/IdentityApi/identity.png"
+      >
+        <p>
+          Verify Phone Numbers, ID Cards, and Addresses. Verify user’s consent
+          in real-time with consent verification. Know that people are who they
+          say they are, Faster.
+        </p>
+      </HeaderSubImage>
+      {/* <HeaderArea
         title={"Easiest way to Verify and Onboard users."}
         imageUrl="/IdentityApi/identity.png"
       >
@@ -77,7 +90,7 @@ const KYC = () => {
           in real-time with consent verification. Know that people are who they
           say they are, Faster.
         </p>
-      </HeaderArea>
+      </HeaderArea> */}
       <div>
         <BasicSection
           imageUrl={"/IdentityApi/Screenshot 2022-12-11 at 12.45.59 PM.png"}

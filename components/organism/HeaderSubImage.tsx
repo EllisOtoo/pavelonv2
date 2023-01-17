@@ -27,10 +27,9 @@ function HeaderSubImage({
   /*  */
   // const { matches } = useContext(IndexContext);
 
-  const matches = useMediaQuery("(max-width:600px)");
   const cardRef = useRef(null); // console.log(useInview(cardRef));
   // const [inView] = useInview(cardRef); // Hooks to check if ref is inView
-  const { setShowSubNav, setShowDropDown } = useContext(IndexContext); //* Context to hide PopUpNav
+  const { setShowSubNav, setShowDropDown, matches } = useContext(IndexContext); //* Context to hide PopUpNav
   const inView = useInView(cardRef);
   // import { useInView } from "framer-motion"
 
@@ -58,11 +57,11 @@ function HeaderSubImage({
           setShowDropDown(false);
         }
       }}
-      className={`relative flex flex-col $ py-16 md:h-96   md:py-32 items-center md:h-auto md:flex-row bg-sky-100 w-12/12 md:justify-around`}
+      className={`relative flex flex-col $ py-16   items-center md:min-h-[50rem] md:flex-row bg-sky-100 w-12/12 md:justify-around`}
     >
       <div className="w-10/12 m-auto h-2 left-[8%] absolute top-0"></div>
       <div
-        className={`w-10/12 m-auto flex flex-col gap-y-20 justify-between  md:flex-row md:gap-32}`}
+        className={`w-10/12 m-auto flex flex-col gap-y-20  md:min-h-[32rem]  md:flex-row`}
       >
         <div className="flex flex-col w-12/12 md:w-6/12 gap-4 overflow-visible">
           <p
@@ -92,11 +91,17 @@ function HeaderSubImage({
         <div
           className={`flex w-full ${
             hidden ? "hidden" : ""
-          } h-72 md:h-auto relative justify-end md:justify-start items-end md:w-5/12`}
+          } h-72  md:h-[500px] relative justify-end md:justify-start items-end md:w-6/12`}
         >
           <>
             {/* <div className="w-full md:w-10/12 h-72 md:h-96 relative"> */}
-            <Image className=" " src={imageUrl} alt="" fill />
+            <Image
+              alt=""
+              className=" "
+              src={imageUrl}
+              fill
+              objectFit="contain"
+            />
             {/* </div> */}
           </>
         </div>
