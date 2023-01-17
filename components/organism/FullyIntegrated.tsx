@@ -50,7 +50,7 @@ function FullyIntegrated() {
                   />
 
                   <Image
-                    src="/fullyIntegrated/middleImage_2_below.5d6e4f23 (1).png"
+                    src="/cml-2.png"
                     alt="creditcard"
                     width={200}
                     height={100}
