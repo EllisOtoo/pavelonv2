@@ -139,12 +139,12 @@ const BAAS = () => {
           <li>A full history is saved for each case, making audits easier</li>
         </ul>
       </BaasBasicSection>
-      <div className="flex w-10/12 m-auto py-12">
-        <div className="flex w-4/12 items-start gap-x-4">
+      <div className="flex w-10/12 m-auto flex-col gap-y-4 md:flex-row py-12">
+        <div className="flex full md:w-4/12 items-start gap-x-4">
           <Image src="/guard.png" alt="" width={50} height={50} />
           <p className="font-black text-2xl">A Secure BAAS platform</p>
         </div>
-        <div className="w-8/12">
+        <div className="w-full md:w-8/12">
           <p>
             Data security and integrity are extremely important to our clients,
             and Pavelon is aware of this. SOC 2, Type II attestation and PCI-DSS
