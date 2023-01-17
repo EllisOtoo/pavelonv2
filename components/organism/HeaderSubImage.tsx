@@ -66,7 +66,7 @@ function HeaderSubImage({
         <div className="flex flex-col w-12/12 md:w-6/12 gap-4 overflow-visible">
           <p
             style={{ width: `${matches ? "90vw" : ""}` }}
-            className={`text-5xl text-slate-900 md:text-6xl lg:text-7xl py-2 md:py-3  font-bold ${styles.gradientText}`}
+            className={`text-5xl text-slate-900 md:text-6xl 2xl:text-7xl py-2 md:py-3  font-bold ${styles.gradientText}`}
           >
             {title}
           </p>
