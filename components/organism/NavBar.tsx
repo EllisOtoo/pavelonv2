@@ -24,10 +24,8 @@ function NavBar() {
   const testRef = useRef(null);
   const menuList = useRef(null);
 
-  const { setShowSubNav, showSubNav, showDropDown, setShowDropDown } =
+  const { setShowSubNav, showSubNav, showDropDown, setShowDropDown, matches } =
     useContext(IndexContext);
-
-  const matches = useMediaQuery("(max-width:600px)");
 
   const MenuListComponent = (
     <MenuList
@@ -83,7 +81,9 @@ function NavBar() {
         }`,
         transition: "height 0.3s",
       }}
-      className="bg-sky-100 py-4"
+      className={`${
+        matches ? "bg-sky-100" : "bg-sky-100"
+      } py-4  border-b border-gray-300 md:border-none`}
     >
       <div
         onMouseOver={(e) => {
@@ -96,7 +96,7 @@ function NavBar() {
       >
         <div className="flex w-full justify-between">
           <SiteLogo />
-          {!!matches ? (
+          {matches ? (
             <span
               onClick={() => {
                 if (matches) {
