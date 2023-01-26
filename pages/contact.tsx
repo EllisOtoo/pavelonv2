@@ -80,24 +80,29 @@ export default function Contact_form() {
         {/* <div
           className={`${styles.bgPattern} p-12 h-screen w-screen absolute top-0 right-0 z-10`}
         ></div> */}
+
         <div
-          className={`flex flex-col md:flex-row w-12/12 md:w-8/12 p-12  justify-between items-center m-auto max-h-screen rounded-lg py-24 z-10 `}
+          className={`flex flex-col md:flex-row w-12/12 md:w-8/12 justify-between  items-center m-auto max-h-fit gap-4 rounded-2xl pt-4 z-10 mx-4`}
         >
-          <div className="w-full w-full md:w-6/12 h-72">
-            <SectionHeader title={"Contact Us"} />
-            <p className="text-xl">
-              Please fill form with details required and one of our
-              representatives will be with you shortly
-            </p>
+          <div className="relative w-full flex  h-36">
+            <div className="w-full px-4 md:w-6/12 z-10">
+              <SectionHeader title={"Contact Us"} />
+              <p className="text-lg">
+                Please fill form with details required and one of our
+                representatives will be with you shortly
+              </p>
+            </div>
           </div>
+
           <hr />
-          <div className=" flex flex-col justify-center w-full h-full md:w-6/12">
+
+          <div className=" flex flex-col justify-center w-full h-full md:w-6/12 rounded-2xl bg-sky-200 px-8 pt-4 pb-8">
             <form
-              className="flex flex-col  h-72"
+              className="flex flex-col  h-72 gap-8"
               onSubmit={formik.handleSubmit}
             >
-              <TextField
-                variant="filled"
+              <Input
+                variant="outlined"
                 error={formik.touched.name && formik.errors.name}
                 helperText={
                   formik.touched.name &&
@@ -127,24 +132,24 @@ export default function Contact_form() {
                 }
               >
                 {(inputProps) => (
-                  <TextField
+                  <Input
                     {...inputProps}
                     name="phone_Number"
                     placeholder="Phone number"
-                    variant="filled"
+                    variant="outlined"
                     type="text"
                   />
                 )}
               </InputMask>
 
-              <TextField
+              <Input
                 error={formik.touched.email && formik.errors.email}
                 helperText={
                   formik.touched.email &&
                   formik.errors.email &&
                   formik.errors.email
                 }
-                variant="filled"
+                variant="outlined"
                 name="email"
                 type="text"
                 placeholder="Email"
@@ -153,7 +158,7 @@ export default function Contact_form() {
                 onBlur={formik.handleBlur}
               />
 
-              <TextField
+              <Input
                 error={
                   formik.touched.business_Name &&
                   formik.errors.business_Name &&
@@ -164,7 +169,7 @@ export default function Contact_form() {
                   formik.errors.business_Name &&
                   formik.errors.business_Name
                 }
-                variant="filled"
+                variant="outlined"
                 name="business_Name"
                 type="text"
                 placeholder="Business Name"
@@ -173,7 +178,9 @@ export default function Contact_form() {
                 onBlur={formik.handleBlur}
               />
 
-              <Button type="submit">Submit</Button>
+              <Button className="bg-sky-900 text-white" type="submit">
+                Submit
+              </Button>
 
               {showSuccess && (
                 <p className="text-center text-green-400 w-full">

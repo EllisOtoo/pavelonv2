@@ -6,7 +6,7 @@ import { Poppins } from "@next/font/google";
 import Head from "next/head";
 import Image from "next/image";
 import { createContext, useState } from "react";
-
+import "./blobz.css";
 import HeaderArea from "../components/organism/HeaderArea";
 import NavBar from "../components/organism/NavBar";
 import PopUpNav from "../components/organism/PopUpNav";
