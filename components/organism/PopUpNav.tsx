@@ -85,7 +85,10 @@ function PopUpNav({ menuToDisplay, children }: { menuToDisplay: string[] }) {
         {children && children}
       </div>
     );
-  return null;
+  else {
+    console.log("Hello ");
+    return null;
+  }
 }
 
 export default PopUpNav;
