@@ -26,13 +26,15 @@ function MenuItem({ menu }: MenuProp) {
   }, [showSubNav]);
 
   const expandRelativeMenu = (e) => {
+    console.log("menuItem clicked");
     // console.log(e.target.name);
     // if (matches && e.target) {
     //   if (e.target.children[0]) e.target.children[0].textContent = "-";
     //   // console.log(e.target.name);
     // }
     // setShowSubNav(!showSubNav);
-    setShowSubNav(!showSubNav);
+    e.stopPropagation();
+    setShowSubNav(true);
     setSubNavContentIndex(menu.id);
     setSubNavTitle(menu.title);
   };
@@ -52,8 +54,16 @@ function MenuItem({ menu }: MenuProp) {
       //   // setShowSubNav(true);
       // }}
       // onClick={()=> {}}
-      onMouseOver={expandRelativeMenu}
-      // onClick={expandRelativeMenu}
+      onMouseLeave={(e) => {
+        e.stopPropagation();
+        setShowSubNav(false);
+        console.log("Left");
+      }}
+      onMouseEnter={expandRelativeMenu}
+      onClick={(e) => {
+        e.stopPropagation();
+        setShowSubNav(true);
+      }}
       // onMouseLeave={collapse}
     >
       {menu.title}
