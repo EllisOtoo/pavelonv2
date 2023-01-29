@@ -54,12 +54,12 @@ function MenuItem({ menu }: MenuProp) {
       //   // setShowSubNav(true);
       // }}
       // onClick={()=> {}}
-      onMouseLeave={(e) => {
-        e.stopPropagation();
-        setShowSubNav(false);
-        console.log("Left");
-      }}
-      onMouseEnter={expandRelativeMenu}
+      // onMouseLeave={(e) => {
+      //   e.stopPropagation();
+      //   setShowSubNav(false);
+      //   console.log("Left");
+      // }}
+      onMouseOver={expandRelativeMenu}
       onClick={(e) => {
         e.stopPropagation();
         setShowSubNav(true);
