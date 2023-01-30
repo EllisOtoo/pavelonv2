@@ -122,6 +122,7 @@ const BAAS = () => {
         imageUrl={"/baas_02.png"}
         title={"Pavelon Cases"}
       >
+        ``
         <p>Easy, seamless workflow management</p>
         <ul>
           <li>

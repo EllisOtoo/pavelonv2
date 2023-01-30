@@ -45,7 +45,7 @@ const InvestmentAsAService = () => {
       <HeaderSubImage
         reverse
         subHeader={"We support the full account lifecycle"}
-        imageUrl={"/investmentAsAService/investGoals.png"}
+        imageUrl={"/InvestmentAsAService/investGoals.png"}
         title="Investment as a Service"
       >
         <p>
