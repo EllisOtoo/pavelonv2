@@ -145,132 +145,135 @@ const HeavyLiftingTabSwitch = () => {
   });
 
   return (
-    <>
-      <div className="my-12">
-        <div className="flex flex-col w-full my-12 justify-center items-center">
-          <h2 className="text-5xl px-10 py-2">
-            {"We’ve done the heavy lifting for you"}
-          </h2>
-          {/* <div ref={container} className=" w-10/12 relative bg-blue-800 "> */}
-          <div ref={container} className="w-10/12 my-2 md:w-3/12 relative ">
-            <div
-              ref={switchDiv}
-              // className="rounded-full bg-blue-300 h-6 w-32"
-              className={`rounded-full ${
-                switched ? `bg-sky-600` : `bg-sky-300`
-              } h-6 p-2`}
-              style={{ width: sliderWidth + 10 }}
-            ></div>
-            <div className="absolute flex top-0 justify-between w-full">
+    <div className="">
+      <div className="md:h-96">
+        <div className="my-12">
+          <div className="flex flex-col w-full my-12 justify-center items-center md:gap-12">
+            <h2 className="text-5xl px-10 py-2">
+              "We’ve done the heavy lifting for you"
+            </h2>
+            {/* <div ref={container} className=" w-10/12 relative bg-blue-800 "> */}
+            <div ref={container} className="w-10/12 my-2 md:w-3/12 relative ">
               <div
-                className="cursor-pointer pl-2"
-                ref={withoutPav}
-                onClick={moveLeft}
-              >
-                Without Pavelon
-              </div>
-              <div
-                ref={withPav}
-                className={`cursor-pointer px-1 ${switched && "text-white"}`}
-                onClick={moveRight}
-              >
-                With Pavelon
+                ref={switchDiv}
+                // className="rounded-full bg-blue-300 h-6 w-32"
+                className={`rounded-full ${
+                  switched ? `bg-sky-600` : `bg-sky-300`
+                } h-6 p-2`}
+                style={{ width: sliderWidth + 10 }}
+              ></div>
+              <div className="absolute flex top-0 justify-between w-full">
+                <div
+                  className="cursor-pointer pl-2"
+                  ref={withoutPav}
+                  onClick={moveLeft}
+                >
+                  Without Pavelon
+                </div>
+                <div
+                  ref={withPav}
+                  className={`cursor-pointer px-1 ${switched && "text-white"}`}
+                  onClick={moveRight}
+                >
+                  With Pavelon
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div className="w-10/12 md:w-6/12 m-auto my-12">
+          {switched ? (
+            <div className="flex flex-col items-center gap-24 md:flex-row m-auto md:w-8/12 justify-around">
+              <Fade in={true} timeout={1000}>
+                <div className="h-16 w-8 relative">
+                  <Image
+                    alt=""
+                    fill
+                    // className="h-4 w-4"
+                    src={"/InvestmentAsAService/left.png"}
+                  />
+                </div>
+              </Fade>
+              <Fade in={true} timeout={1000}>
+                <div className="h-8 w-32 relative">
+                  <Fade in={true} timeout={1000}>
+                    <div className="flex flex-col items-center">
+                      <Avatar className="bg-sky-600">x</Avatar>
+                      <span>Pavelon</span>
+                    </div>
+                  </Fade>
+                </div>
+              </Fade>{" "}
+              <Fade in={true} timeout={1000}>
+                <div className="h-20 w-16 relative">
+                  <Image
+                    alt=""
+                    fill
+                    // className="h-4 w-4"
+                    src={"/InvestmentAsAService/right.png"}
+                  />
+                </div>
+              </Fade>
+            </div>
+          ) : (
+            <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
+              <Fade in={true} timeout={1000}>
+                <div className="h-16 w-8 relative">
+                  <Image
+                    alt=""
+                    fill
+                    // className="h-4 w-4"
+                    src={"/InvestmentAsAService/left.png"}
+                  />
+                </div>
+              </Fade>
+              <Fade in={true} timeout={1000}>
+                <div className="flex flex-col items-center">
+                  <Avatar className="bg-red-500">x</Avatar>
+                  <span>
+                    Regulatory <br /> Overhead
+                  </span>
+                </div>
+              </Fade>
+              <Fade in={true} timeout={1000}>
+                <div className="flex flex-col items-center">
+                  <Avatar className="bg-red-500">x</Avatar>
+                  <span className="text-center">
+                    Compliance <br /> Management{" "}
+                  </span>
+                </div>
+              </Fade>
+              <Fade in={true} timeout={1000}>
+                <div className="flex flex-col items-center">
+                  <Avatar className="bg-red-500">x</Avatar>
+                  <span className="text-center">
+                    Middle Office <br /> Operations{" "}
+                  </span>
+                </div>
+              </Fade>
+              <Fade in={true} timeout={1000}>
+                <div className="flex flex-col items-center">
+                  <Avatar className="bg-red-500">x</Avatar>
+                  <span className="text-center">
+                    BackOffice <br /> Operations{" "}
+                  </span>
+                </div>
+              </Fade>
+              <Fade in={true} timeout={1000}>
+                <div className="h-20 w-16 relative">
+                  <Image
+                    alt=""
+                    fill
+                    // className="h-4 w-4"
+                    src={"/InvestmentAsAService/right.png"}
+                  />
+                </div>
+              </Fade>
+            </div>
+          )}
+        </div>
       </div>
-      <div className="w-10/12 md:w-6/12 m-auto my-12">
-        {switched ? (
-          <div className="flex flex-col items-center gap-24 md:flex-row m-auto md:w-8/12 justify-around">
-            <Fade in={true} timeout={1000}>
-              <div className="h-16 w-8 relative">
-                <Image
-                  alt=""
-                  fill
-                  // className="h-4 w-4"
-                  src={"/investmentAsAService/left.png"}
-                />
-              </div>
-            </Fade>
-            <Fade in={true} timeout={1000}>
-              <div className="h-8 w-32 relative">
-                <Fade in={true} timeout={1000}>
-                  <div className="flex flex-col items-center">
-                    <Avatar className="bg-sky-600">x</Avatar>
-                    <span>Pavelon</span>
-                  </div>
-                </Fade>
-              </div>
-            </Fade>{" "}
-            <Fade in={true} timeout={1000}>
-              <div className="h-20 w-16 relative">
-                <Image
-                  alt=""
-                  fill
-                  // className="h-4 w-4"
-                  src={"/investmentAsAService/right.png"}
-                />
-              </div>
-            </Fade>
-          </div>
-        ) : (
-          <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
-            <Fade in={true} timeout={1000}>
-              <div className="h-16 w-8 relative">
-                <Image
-                  alt=""
-                  fill
-                  // className="h-4 w-4"
-                  src={"/investmentAsAService/left.png"}
-                />
-              </div>
-            </Fade>
-            <Fade in={true} timeout={1000}>
-              <div className="flex flex-col items-center">
-                <Avatar className="bg-red-500">x</Avatar>
-                <span>
-                  Regulatory <br /> Overhead
-                </span>
-              </div>
-            </Fade>
-            <Fade in={true} timeout={1000}>
-              <div className="flex flex-col items-center">
-                <Avatar className="bg-red-500">x</Avatar>
-                <span className="text-center">
-                  Compliance <br /> Management{" "}
-                </span>
-              </div>
-            </Fade>
-            <Fade in={true} timeout={1000}>
-              <div className="flex flex-col items-center">
-                <Avatar className="bg-red-500">x</Avatar>
-                <span className="text-center">
-                  Middle Office <br /> Operations{" "}
-                </span>
-              </div>
-            </Fade>
-            <Fade in={true} timeout={1000}>
-              <div className="flex flex-col items-center">
-                <Avatar className="bg-red-500">x</Avatar>
-                <span className="text-center">
-                  BackOffice <br /> Operations{" "}
-                </span>
-              </div>
-            </Fade>
-            <Fade in={true} timeout={1000}>
-              <div className="h-20 w-16 relative">
-                <Image
-                  alt=""
-                  fill
-                  // className="h-4 w-4"
-                  src={"/investmentAsAService/right.png"}
-                />
-              </div>
-            </Fade>
-          </div>
-        )}
-      </div>
+
       <BaasBasicSection
         imageUrl={"/turnkey_01.png"}
         title={"Turn Key Experiences"}
@@ -317,7 +320,7 @@ const HeavyLiftingTabSwitch = () => {
         </ul>
       </BaasBasicSection>
       <GetStarted />
-    </>
+    </div>
   );
 };
 
